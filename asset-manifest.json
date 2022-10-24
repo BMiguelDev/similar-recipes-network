@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/similar-recipes-network/static/css/main.61ce1492.css",
+    "main.js": "/similar-recipes-network/static/js/main.1edc381e.js",
+    "index.html": "/similar-recipes-network/index.html",
+    "main.61ce1492.css.map": "/similar-recipes-network/static/css/main.61ce1492.css.map",
+    "main.1edc381e.js.map": "/similar-recipes-network/static/js/main.1edc381e.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.61ce1492.css",
+    "static/js/main.1edc381e.js"
+  ]
+}
