@@ -29,6 +29,7 @@ import queryDataBurgerSimilar15 from './data/queryDataBurgerSimilar15';
 const SPOONACULAR_API_KEY = process.env.REACT_APP_SPOONACULAR_API_KEY;
 
 
+
 class App extends Component {
     constructor(props) {
         super(props);
