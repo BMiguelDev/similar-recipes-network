@@ -20,7 +20,7 @@ jobs:
 
       - name: Install and Build 🔧
         run: |
-          npm install
+          npm install --force
           npm run-script build
         env:
           REACT_APP_SPOONACULAR_API_KEY: ${{ secrets.REACT_APP_SPOONACULAR_API_KEY }}
