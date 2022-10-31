@@ -24,6 +24,7 @@ jobs:
           npm run-script build
         env:
           REACT_APP_SPOONACULAR_API_KEY: ${{ secrets.REACT_APP_SPOONACULAR_API_KEY }}
+          CI: false
 
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@v4
