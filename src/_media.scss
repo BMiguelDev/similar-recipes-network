@@ -356,6 +356,12 @@
                         }
                     }
                 }
+
+                a:nth-of-type(1), a:nth-of-type(2) {
+                    i {
+                        font-size: 1.125rem;
+                    }
+                }
             }
         }
     }
@@ -805,6 +811,12 @@
                         }
                     }
                 }
+
+                a:nth-of-type(1), a:nth-of-type(2) {
+                    i {
+                        font-size: 1.125rem;
+                    }
+                }
             }
         }
     }
@@ -1236,6 +1248,12 @@
                         }
                     }
                 }
+
+                a:nth-of-type(1), a:nth-of-type(2) {
+                    i {
+                        font-size: .875rem;
+                    }
+                }
             }
         }
     }
@@ -1665,6 +1683,12 @@
                             color: var(--footer-color);
                             background-color: inherit;
                         }
+                    }
+                }
+
+                a:nth-of-type(1), a:nth-of-type(2) {
+                    i {
+                        font-size: 1.4rem;
                     }
                 }
             }
