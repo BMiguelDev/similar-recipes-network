@@ -6,9 +6,7 @@
 
 #### Check the app: https://bmigueldev.github.io/similar-recipes-network/
 
-###### Note: 
-- This app was first built using React pre v16.8 and then adapted to its current state
-- The app's functionality may be hindered by the APIs used
+###### Note: <br /> - This app was first built using React pre v16.8 and then adapted to its current state <br /> - The app's functionality may be hindered by the APIs used
 
 ## App functionalities:
 - Search for recipes using filters
