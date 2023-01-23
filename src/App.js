@@ -49,6 +49,7 @@ class App extends Component {
             selectedCategory: 'any',
             isDarkMode: false
         };
+        this.handleResize = this.handleResize.bind(this);
         this.handleChangeSearch = this.handleChangeSearch.bind(this);
         this.handleChangeLayoutSelect = this.handleChangeLayoutSelect.bind(this);
         this.handleChangeNumOfRecipes = this.handleChangeNumOfRecipes.bind(this);
@@ -64,6 +65,20 @@ class App extends Component {
         this.buildGraphAlgorithm1 = this.buildGraphAlgorithm1.bind(this);
         this.displaySideBarInformation = this.displaySideBarInformation.bind(this);
         this.displayGraph = this.displayGraph.bind(this);
+    }
+
+    handleResize() {
+        const appDivElement = document.querySelector(".app_container");
+        appDivElement.style.height = `${window.innerHeight}px`;
+    }
+
+    componentDidMount() {
+        window.addEventListener('resize', this.handleResize);
+        this.handleResize();
+    }
+
+    componentWillUnmount() {
+        window.removeEventListener('resize', this.handleResize);
     }
 
     handleChangeSearch(event) {

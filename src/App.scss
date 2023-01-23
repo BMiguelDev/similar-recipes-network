@@ -120,7 +120,8 @@ body {
 // App content 
 .app_container {
     background-color: var(--main-bg-color);
-    height: 100vh;
+    //height: 100vh;
+    max-height: 100vh;
     padding-bottom: 6.5%;
     position: relative;
     transition: all .2s ease-in-out;
