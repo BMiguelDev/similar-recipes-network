@@ -4,15 +4,14 @@ import { Sigma, RandomizeNodePositions, /* EdgeShapes, NodeShapes, RelativeSize 
 import ForceLink from 'react-sigma/lib/ForceLink';
 import ForceAtlas2 from 'react-sigma/lib/ForceAtlas2';
 import axios from 'axios';
-
 import Radio from '@material-ui/core/Radio';
 import RadioGroup from '@material-ui/core/RadioGroup';
 import Button from '@material-ui/core/Button';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import InfoOutlinedIcon from '@material-ui/icons/InfoOutlined';
-import MultiSearchSelect from "react-search-multi-select";
 import Slider from '@material-ui/core/Slider';
 import Tooltip from "@material-ui/core/Tooltip";
+import Select from 'react-select';
 
 import './App.scss';
 
@@ -46,7 +45,8 @@ class App extends Component {
             isGraphBuilt: false,
             recipeIdPreviousGraphBuilt: "",
             numberOfRecipes: 3,
-            selectedCategory: 'any',
+            selectedCategory: { value: 'any', label: 'Any' },
+            previouslySelectedCategory: { value: '', label: '' },
             isDarkMode: false
         };
         this.handleResize = this.handleResize.bind(this);
@@ -93,15 +93,8 @@ class App extends Component {
         this.setState({ numberOfRecipes: parseInt(event.target.innerText) });
     }
 
-    handleChangeCategorySelect(array) {
-        if (array !== undefined && array.length !== 0) {
-            this.state.selectedCategory = array[0];
-            //array.forEach(item => this.state.selectedCategories.push(item));
-
-            // let newSelectedCategories = [];
-            // array.forEach(item => newSelectedCategories.push(item));
-            // this.setState({ selectCategories: newSelectedCategories});
-        }
+    handleChangeCategorySelect(selectedOption) {
+        this.setState({ selectedCategory: selectedOption});
     }
 
     handleChangeIsDarkMode() {
@@ -110,16 +103,16 @@ class App extends Component {
 
     async handleSubmit(event) {
         event.preventDefault();
-        if (this.state.searchName === this.state.previouslySearchedName) return;
+        if (this.state.searchName === this.state.previouslySearchedName && this.state.selectedCategory.value === this.state.previouslySelectedCategory.value) return;
 
         this.setState({ isLoading: true, searchItemsResults: [], nodeClicked: null, previousNodeClickedId: "" });
 
         const nameStringParsed = this.state.searchName.replaceAll(' ', '+');
         let finalQueryString = "";
-        if (this.state.selectedCategory === 'any') {
+        if (this.state.selectedCategory.value === 'any') {
             finalQueryString = 'https://api.spoonacular.com/recipes/complexSearch?apiKey=' + SPOONACULAR_API_KEY + '&query=' + nameStringParsed + '&number=6&addRecipeInformation=true';
         } else {
-            const typeStringParsed = this.state.selectedCategory.replaceAll(' ', '+');
+            const typeStringParsed = this.state.selectedCategory.value.replaceAll(' ', '+');
             finalQueryString = 'https://api.spoonacular.com/recipes/complexSearch?apiKey=' + SPOONACULAR_API_KEY + '&query=' + nameStringParsed + '&number=6&addRecipeInformation=true&type=' + typeStringParsed;
         }
 
@@ -140,7 +133,7 @@ class App extends Component {
                 return null;
             });
 
-        this.setState({ isLoading: false, searchNameWasSubmitted: true, previouslySearchedName: this.state.searchName });
+        this.setState({ isLoading: false, searchNameWasSubmitted: true, previouslySearchedName: this.state.searchName, previouslySelectedCategory: this.state.selectedCategory });
     }
 
     getNodeColor(item) {
@@ -177,7 +170,7 @@ class App extends Component {
         const [currentItem, currentId] = event === null ? [item, item.id] : [event.data.node, event.data.node.id];
 
         if (currentId === this.state.previousNodeClickedId) return;
-        this.setState({ searchNameWasSubmitted: false, previouslySearchedName: "", nodeClicked: currentItem, previousNodeClickedId: currentId });
+        this.setState({ searchNameWasSubmitted: false, previouslySearchedName: "", previouslySelectedCategory: { value: '', label: '' }, nodeClicked: currentItem, previousNodeClickedId: currentId });
     }
 
     parseRecipeTitleString(titleString) {
@@ -192,7 +185,7 @@ class App extends Component {
             return;
         }
 
-        this.setState({ isLoading: true, isGraphLoading: true, isGraphBuilt: false, searchNameWasSubmitted: false, previouslySearchedName: "", previousNodeClickedId: "" });
+        this.setState({ isLoading: true, isGraphLoading: true, isGraphBuilt: false, searchNameWasSubmitted: false, previouslySearchedName: "", previouslySelectedCategory: { value: '', label: '' }, previousNodeClickedId: "" });
         let myGraph = { nodes: [], edges: [] };       //Initialize graph variable
         let queryData = [];                         //Initialize variable that will hold the query response
 
@@ -492,12 +485,26 @@ class App extends Component {
         }
     }
 
+
     render() {
+
         const mealType = [
-            'any', 'main course', 'side dish', 'dessert', 'appetizer',
-            'salad', 'bread', 'breakfast', 'soup', 'beverage', 'sauce', 'marinade',
-            'fingerfood', 'snack', 'drink'
-        ];
+            { value: 'any', label: 'Any' },
+            { value: 'main course', label: 'Main Course' },
+            { value: 'side dish', label: 'Side Dish' },
+            { value: 'dessert', label: 'Dessert' },
+            { value: 'appetizer', label: 'Appetizer' },
+            { value: 'salad', label: 'Salad' },
+            { value: 'bread', label: 'Bread' },
+            { value: 'breakfast', label: 'Breakfast' },
+            { value: 'soup', label: 'Soup' },
+            { value: 'beverage', label: 'Beverage' },
+            { value: 'sauce', label: 'Sauce' },
+            { value: 'marinade', label: 'Marinade' },
+            { value: 'fingerfood', label: 'Fingerfood' },
+            { value: 'snack', label: 'Snack' },
+            { value: 'drink', label: 'Drink' }
+          ];
 
         return (
             <div className={this.state.isDarkMode ? "app_container dark_mode" : "app_container"}>
@@ -540,7 +547,12 @@ class App extends Component {
                                 </div>
                                 <div className="genres_select_input_container">
                                     <label> Meals
-                                        <MultiSearchSelect className="genres_select_input" showTags={false} multiSelect={false} onSelect={this.handleChangeCategorySelect} options={mealType} />
+                                        <Select
+                                            value={this.selectedCategory}
+                                            onChange={this.handleChangeCategorySelect}
+                                            options={mealType}
+                                            // className="genres_select_input"
+                                        />
                                     </label>
                                 </div>
                             </div>
