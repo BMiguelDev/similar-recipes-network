@@ -49,6 +49,7 @@ class App extends Component {
             previouslySelectedCategory: { value: '', label: '' },
             isDarkMode: false
         };
+        this.handleClick = this.handleClick.bind(this);
         this.handleResize = this.handleResize.bind(this);
         this.handleChangeSearch = this.handleChangeSearch.bind(this);
         this.handleChangeLayoutSelect = this.handleChangeLayoutSelect.bind(this);
@@ -72,13 +73,21 @@ class App extends Component {
         appDivElement.style.height = `${window.innerHeight}px`;
     }
 
+    handleClick(event) {
+        const helpDivElement = document.querySelector(".app_info_text_container");
+        if(helpDivElement && helpDivElement.classList.contains("app_info_text_container_visible") && !helpDivElement.contains(event.target))
+            this.handleToggleInfoSection();
+    }
+
     componentDidMount() {
+        window.addEventListener('click', this.handleClick);
         window.addEventListener('resize', this.handleResize);
         this.handleResize();
     }
 
     componentWillUnmount() {
         window.removeEventListener('resize', this.handleResize);
+        window.removeEventListener('click', this.handleClick);
     }
 
     handleChangeSearch(event) {
@@ -157,7 +166,8 @@ class App extends Component {
         }
     }
 
-    handleToggleInfoSection() {
+    handleToggleInfoSection(event) {
+        if(event) event.stopPropagation();
         const appInfoDescriptionContainer = document.querySelector(".app_info_text_container");
         if (appInfoDescriptionContainer.classList.contains("app_info_text_container_hidden")) {
             appInfoDescriptionContainer.classList.replace("app_info_text_container_hidden", "app_info_text_container_visible");
@@ -431,10 +441,7 @@ class App extends Component {
                 } else {
                     return (
                         <Row className="recipe_title_search_results_empty">
-                            <p>
-                                No results for that query, <br />
-                                try something else!
-                            </p>
+                            <p> No results for that query, try something else!</p>
                         </Row>
                     );
                 }
@@ -485,6 +492,7 @@ class App extends Component {
         }
     }
 
+    // TODO: remove focus from category selector after clicking an option (also remove virtual keyboard on mobile after removing focus/selecting a category)
 
     render() {
 
@@ -551,7 +559,9 @@ class App extends Component {
                                             value={this.selectedCategory}
                                             onChange={this.handleChangeCategorySelect}
                                             options={mealType}
+
                                             onBlur={event => event.preventDefault()}
+                                            blurInputOnSelect={false}
                                             // https://react-select.com/styles#the-styles-prop
                                             // TODO: remove this
                                         />
