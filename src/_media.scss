@@ -32,32 +32,20 @@
             height: 42%;
             display: flex;
             //align-items: center;
-            justify-content: flex-start;
+            //justify-content: flex-start;
             gap: 2rem;
-
-            .loading_row {
-                width: 46%;
-                height: 100%;
-                padding-right: 1rem;
-                gap: .65rem;
-                
-                i,
-                p {
-                    font-size: .95rem;
-                }
-            }
 
             .sidebar_form {
                 height: 100%;
                 width: 46%;
 
-                display: flex;
-                flex-direction: column;
+                // display: flex;
+                // flex-direction: column;
 
 
                 .sidebar_form_radio_container {
                     gap: .3rem;
-                    width: 90%;
+                    //width: 90%;
 
                     label {
 
@@ -108,7 +96,7 @@
                 .options_filter {
                     padding: .2rem 0;
                     padding-bottom: .25rem;
-                    width: 90%;
+                    //width: 90%;
 
                     .number_of_games_slider_container {
                         padding-bottom: .65rem;
@@ -155,7 +143,7 @@
                 }
 
                 .recipe_search_input_container {
-                    width: 90%;
+                    //width: 90%;
 
                     label {
                         font-size: .85rem;
@@ -169,12 +157,25 @@
                 }
 
                 .recipe_search_button_container {
-                    width: 90%;
-                    margin-top: .7rem;
+                    //width: 90%;
+                    //margin-top: .7rem;
 
                     .recipe_search_button {
-                        padding: .20rem 0rem;
+                        padding: .2rem 0;
                     }
+                }
+            }
+
+            .loading_row {
+                width: 46%;
+                height: 100%;
+                margin-top: 0;
+                //padding-right: 1rem;
+                gap: .65rem;
+
+                i,
+                p {
+                    font-size: .9rem;
                 }
             }
 
@@ -206,9 +207,11 @@
             .recipe_title_search_results_empty {
                 margin-top: 0;
                 width: 46%;
+                padding: 0 5%;
 
                 p {
-                    font-size: .775rem;
+                    margin: 0;
+                    font-size: .725rem;
                 }
             }
 
@@ -291,7 +294,7 @@
 
         //Graph content
         .graph_container {
-            height: 52%;
+            //height: 52%;
 
             .empty_graph_container {
                 gap: 1.75rem;
@@ -318,11 +321,11 @@
 
     // Footer content
     footer {
-        position: fixed;
-        bottom: 0;
-        left: 0;
+        // position: fixed;
+        // bottom: 0;
+        // left: 0;
         padding: .3rem .75rem;
-        gap: .25rem;
+        //gap: .25rem;
         height: 5%;
 
         .footer_api_description {
@@ -337,7 +340,7 @@
 
             .footer_text {
                 font-size: .7rem;
-                text-align: center;
+                //text-align: center;
                 letter-spacing: .015rem;
             }
 
@@ -357,7 +360,8 @@
                     }
                 }
 
-                a:nth-of-type(1), a:nth-of-type(2) {
+                a:nth-of-type(1),
+                a:nth-of-type(2) {
                     i {
                         font-size: 1.125rem;
                     }
@@ -408,7 +412,7 @@
         }
     }
 
-    
+
     // Info text content
     .app_info_text_container {
         left: 50%;
@@ -444,16 +448,15 @@
     .header {
         justify-content: flex-start;
         padding-left: 1rem;
-        height: 6.5%;
+        height: 6%;
         gap: .65rem;
 
         h3 {
-            font-size: 1.05rem;
+            font-size: .95rem;
         }
 
         i {
-            padding-top: .25rem;
-            font-size: 1.1rem;
+            font-size: 1rem;
         }
     }
 
@@ -462,46 +465,40 @@
     .main_container {
         display: flex;
         flex-direction: column;
-        padding: 1.25rem;
-        height: 95%;
-        gap: 1rem;
+        padding: .5% 2%;
+        height: 87%;
+        gap: 1.5%;
 
         // Side bar content
         .sidebar_content {
-            height: 42%;
-            display: flex;
+            flex: 1;
+            //height: 42%;
+            height: unset;
+            width: 100%;
+            // display: flex;
             //align-items: center;
-            justify-content: flex-start;
-            gap: 2rem;
-
-            .loading_row {
-                width: 46%;
-                height: 100%;
-                padding-right: 1rem;
-                gap: .65rem;
-                
-                i,
-                p {
-                    font-size: .95rem;
-                }
-            }
+            flex-direction: row;
+            //justify-content: center;
+            //align-items: flex-start;
+            gap: 3%;
 
             .sidebar_form {
                 height: 100%;
-                width: 46%;
-                display: flex;
-                flex-direction: column;
-
-
+                width: 48.5%;
+                //gap: 2%;
+                gap: unset;
+                justify-content: space-between;
+                // display: flex;
+                // flex-direction: column;
 
                 .sidebar_form_radio_container {
                     gap: 0;
-                    width: 90%;
+                    //width: 90%;
 
                     label {
 
                         p {
-                            font-size: .775rem;
+                            font-size: .75rem;
                         }
 
                         button {
@@ -518,7 +515,7 @@
                     .graph_layout_info {
                         font-size: .5rem;
                         top: -5%;
-                        right: -15%;
+                        right: 0%;
                         width: 35%;
                         padding: .1rem;
                         line-height: .5rem;
@@ -546,7 +543,7 @@
                             }
 
                             &>span:nth-of-type(2) {
-                                font-size: 0.575rem;
+                                font-size: 0.55rem;
                             }
                         }
                     }
@@ -554,15 +551,15 @@
 
                 .options_filter {
                     padding: 0;
-                    padding-bottom: .25rem;
-                    width: 90%;
+                    //padding-bottom: .25rem;
+                    //width: 90%;
 
                     .number_of_games_slider_container {
                         padding-bottom: .4rem;
                         margin-right: .35rem;
 
                         label {
-                            font-size: .775rem;
+                            font-size: .75rem;
 
                             span {
                                 padding: 0;
@@ -573,31 +570,73 @@
                     .genres_select_input_container {
 
                         label {
-                            font-size: .775rem;
+                            font-size: .75rem;
 
-                            .genres_select_input {
-                                width: 100% !important;
+                            // .genres_select_input {
+                            //     width: 100% !important;
 
-                                div {
+                            //     div {
 
-                                    .input-area {
-                                        margin: .1rem .1rem;
-                                        padding: 0rem;
+                            //         .input-area {
+                            //             margin: .1rem .1rem;
+                            //             padding: 0rem;
 
-                                        input {
-                                            padding: .05rem .35rem;
-                                        }
+                            //             input {
+                            //                 padding: .05rem .35rem;
+                            //             }
+                            //         }
+
+                            //         .option-area {
+                            //             width: 101%;
+                            //             left: -8%;
+                            //             top: 105%;
+                            //             max-height: 10.75vh !important;
+
+                            //             p {
+                            //                 padding: .025rem;
+                            //                 font-size: .65rem;
+                            //             }
+                            //         }
+                            //     }
+                            // }
+
+                            &>div {
+
+                                &>div:nth-of-type(1) {
+                                    font-size: .65rem;
+                                    letter-spacing: .015rem;
+                                    min-height: 20px;
+
+                                    &>div:nth-of-type(1) {
+                                        padding: .1rem .25rem;
                                     }
 
-                                    .option-area {
-                                        width: 101%;
-                                        left: -8%;
-                                        top: 105%;
-                                        max-height: 10.75vh !important;
+                                    &>div:nth-of-type(2) {
 
-                                        p {
-                                            padding: .025rem;
-                                            font-size: .65rem;
+                                        span {
+                                            margin: 4px 0;
+                                        }
+
+                                        div {
+                                            padding: 0 .15rem;
+                                        }
+                                    }
+                                }
+
+                                &>div:nth-of-type(2) {
+                                    //margin-top: .02rem;
+                                    margin-bottom: .1rem;
+                                    //padding: .05rem 0;
+
+                                    &>div {
+                                        max-height: 11vh;
+                                        padding: .05rem 0;
+
+                                        &>div {
+                                            padding: .25rem .65rem;
+                                            font-size: .625rem;
+                                            letter-spacing: .015rem;
+                                            //transition: none;
                                         }
                                     }
                                 }
@@ -607,10 +646,10 @@
                 }
 
                 .recipe_search_input_container {
-                    width: 90%;
+                    //width: 90%;
 
                     label {
-                        font-size: .775rem;
+                        font-size: .75rem;
 
                         .recipe_search_input {
                             width: 100%;
@@ -622,19 +661,33 @@
                 }
 
                 .recipe_search_button_container {
-                    width: 90%;
-                    margin-top: .5rem;
+                    //width: 90%;
+                    //margin-top: .5rem;
 
                     .recipe_search_button {
-                        padding: .015rem 0rem;
-                        font-size: .7rem;
+                        padding: .05rem 0;
+                        font-size: .675rem;
+                        min-width: 40%;
                     }
+                }
+            }
+
+            .loading_row {
+                width: 48.5%;
+                height: 100%;
+                margin-top: 0;
+                //padding-right: 1rem;
+                gap: .65rem;
+
+                i,
+                p {
+                    font-size: .9rem;
                 }
             }
 
             .recipe_title_search_results {
                 margin-top: 0;
-                width: 46%;
+                width: 48.5%;
                 height: 100%;
                 display: flex;
                 align-items: center;
@@ -659,16 +712,20 @@
 
             .recipe_title_search_results_empty {
                 margin-top: 0;
-                width: 46%;
+                width: 48.5%;
+                padding: 0 5%;
+                height: 100%;
+                background-color: red;
 
                 p {
-                    font-size: .775rem;
+                    margin: 0;
+                    font-size: .725rem;
                 }
             }
 
             .recipe_clicked_description {
                 margin-top: .75rem;
-                width: 46%;
+                width: 48.5%;
                 height: 100%;
                 display: flex;
                 flex-direction: column;
@@ -746,24 +803,27 @@
 
         //Graph content
         .graph_container {
-            height: 52%;
+            //height: 52%;
+            flex: 1;
 
             .empty_graph_container {
-                gap: 1.65rem;
+                gap: 5%;
 
                 i {
-                    font-size: 3.5rem;
+                    font-size: 2.5rem;
                 }
 
                 .empty_graph_container_description {
                     gap: .9rem;
 
                     h4 {
-                        font-size: 1.1rem;
+                        font-size: .9rem;
+                        line-height: 1.2rem;
                     }
 
                     p {
-                        font-size: .875rem;
+                        font-size: .725rem;
+                        line-height: 1rem;
                     }
                 }
             }
@@ -773,37 +833,35 @@
 
     // Footer content
     footer {
-        position: fixed;
-        bottom: 0;
-        left: 0;
-        padding: .3rem .75rem;
-        gap: .25rem;
-        height: 5%;
+        padding: .1rem .25rem;
+        //gap: .4rem;
+        height: 4%;
 
         .footer_api_description {
 
             p {
-                font-size: .7rem;
+                font-size: .55rem;
+                letter-spacing: .025rem;
             }
         }
 
         .footer_info {
-            gap: 1rem;
+            gap: .25rem;
 
             .footer_text {
-                font-size: .7rem;
-                text-align: center;
+                font-size: .55rem;
+                //text-align: center;
                 letter-spacing: .015rem;
             }
 
             .footer_icon_container {
-                gap: .55rem;
+                gap: .2rem;
 
                 a {
 
                     i {
-                        font-size: 1.25rem;
-                        padding: .3rem;
+                        font-size: .75rem;
+                        padding: .2rem;
 
                         &:hover {
                             color: var(--footer-color);
@@ -812,9 +870,10 @@
                     }
                 }
 
-                a:nth-of-type(1), a:nth-of-type(2) {
+                a:nth-of-type(1),
+                a:nth-of-type(2) {
                     i {
-                        font-size: 1.125rem;
+                        font-size: .65rem;
                     }
                 }
             }
@@ -824,10 +883,10 @@
 
     // Dark mode content
     .dark_mode_container {
-        top: 1.25%;
+        top: 1.5%;
         right: 1%;
-        width: 1.75rem;
-        height: 1.75rem;
+        width: 1.35rem;
+        height: 1.35rem;
 
         &:hover {
             background-color: var(--dark-mode-container-bg-color);
@@ -838,17 +897,17 @@
         }
 
         i {
-            font-size: 1.075rem;
+            font-size: .8rem;
         }
     }
 
 
     // Info button content
     .app_information_button_container {
-        top: 1.25%;
+        top: 1.5%;
         right: 11.5%;
-        width: 1.75rem;
-        height: 1.75rem;
+        width: 1.35rem;
+        height: 1.35rem;
 
         &:hover {
             background-color: var(--dark-mode-container-bg-color);
@@ -859,20 +918,20 @@
         }
 
         i {
-            font-size: 1.075rem;
+            font-size: .8rem;
         }
     }
 
-    
+
     // Info text content
     .app_info_text_container {
-        left: 50%;
-        top: 8.5%;
-        width: 46%;
-        height: 38%;
+        left: 51.5%;
+        top: 7.5%;
+        width: 46.5%;
+        height: 41.25%;
         margin: 0;
-        padding: .7rem 1rem;
-        gap: .3rem;
+        padding: .5rem;
+        gap: .25rem;
 
         i {
             font-size: 1rem;
@@ -880,13 +939,24 @@
         }
 
         p {
-            font-size: .625rem;
-            text-indent: .3rem;
-            line-height: .75rem;
+            font-size: .65rem;
+            text-indent: .4rem;
+            line-height: .8rem;
         }
 
         span {
-            font-size: .6rem;
+            font-size: .625rem;
+        }
+
+        .app_info_text_container_close {
+            width: 1.15rem;
+            height: 1.15rem;
+            top: 1.5%;
+            right: 2%;
+    
+            i {
+                font-size: .825rem;
+            }
         }
     }
 }
@@ -910,7 +980,7 @@
             font-size: .9rem;
         }
     }
-    
+
 
     // Main content
     .main_container {
@@ -931,7 +1001,7 @@
                 width: 46%;
                 height: 100%;
                 gap: .65rem;
-                
+
                 i,
                 p {
                     font-size: .9rem;
@@ -1146,7 +1216,7 @@
                             margin: .5rem 0;
                         }
 
-                        &::before { 
+                        &::before {
                             top: 68.5%;
                             left: 0%;
                             font-size: .75rem;
@@ -1249,7 +1319,8 @@
                     }
                 }
 
-                a:nth-of-type(1), a:nth-of-type(2) {
+                a:nth-of-type(1),
+                a:nth-of-type(2) {
                     i {
                         font-size: .875rem;
                     }
@@ -1300,7 +1371,7 @@
         }
     }
 
-    
+
     // Info text content
     .app_info_text_container {
         left: 27.5%;
@@ -1370,7 +1441,7 @@
                 height: 100%;
                 padding-right: 1rem;
                 gap: .85rem;
-                
+
                 i,
                 p {
                     font-size: 1.25rem;
@@ -1686,7 +1757,8 @@
                     }
                 }
 
-                a:nth-of-type(1), a:nth-of-type(2) {
+                a:nth-of-type(1),
+                a:nth-of-type(2) {
                     i {
                         font-size: 1.4rem;
                     }
@@ -1737,7 +1809,7 @@
         }
     }
 
-    
+
     // Info text content
     .app_info_text_container {
         left: 50%;

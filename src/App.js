@@ -75,7 +75,7 @@ class App extends Component {
 
     handleClick(event) {
         const helpDivElement = document.querySelector(".app_info_text_container");
-        if(helpDivElement && helpDivElement.classList.contains("app_info_text_container_visible") && !helpDivElement.contains(event.target))
+        if (helpDivElement && helpDivElement.classList.contains("app_info_text_container_visible") && !helpDivElement.contains(event.target))
             this.handleToggleInfoSection();
     }
 
@@ -103,12 +103,12 @@ class App extends Component {
     }
 
     handleChangeCategorySelect(selectedOption) {
-        this.setState({ selectedCategory: selectedOption});
+        this.setState({ selectedCategory: selectedOption });
 
         // Blur the input element out of focus
         const categorySelectElement = document.getElementById("react-select-2-input");
         categorySelectElement.setAttribute('readonly', 'readonly'); // Force virtual keyboard on mobile screens to hide on input field.
-        setTimeout(function() {
+        setTimeout(function () {
             categorySelectElement.blur();  // Actually unfocus element and close the virtual keyboard
             // Remove readonly attribute after virtual keyboard is hidden.
             categorySelectElement.removeAttribute('readonly');
@@ -176,7 +176,7 @@ class App extends Component {
     }
 
     handleToggleInfoSection(event) {
-        if(event) event.stopPropagation();
+        if (event) event.stopPropagation();
         const appInfoDescriptionContainer = document.querySelector(".app_info_text_container");
         if (appInfoDescriptionContainer.classList.contains("app_info_text_container_hidden")) {
             appInfoDescriptionContainer.classList.replace("app_info_text_container_hidden", "app_info_text_container_visible");
@@ -501,10 +501,9 @@ class App extends Component {
         }
     }
 
-    // TODO: remove focus from category selector after clicking an option (also remove virtual keyboard on mobile after removing focus/selecting a category)
+    // TODO: fix static data not showing when API calls arent available/no internet
 
     render() {
-
         const mealType = [
             { value: 'any', label: 'Any' },
             { value: 'main course', label: 'Main Course' },
@@ -521,7 +520,7 @@ class App extends Component {
             { value: 'fingerfood', label: 'Fingerfood' },
             { value: 'snack', label: 'Snack' },
             { value: 'drink', label: 'Drink' }
-          ];
+        ];
 
         return (
             <div className={this.state.isDarkMode ? "app_container dark_mode" : "app_container"}>
@@ -571,8 +570,8 @@ class App extends Component {
 
                                             onBlur={event => event.preventDefault()}
                                             blurInputOnSelect={false}
-                                            // https://react-select.com/styles#the-styles-prop
-                                            // TODO: remove this
+                                        // https://react-select.com/styles#the-styles-prop
+                                        // TODO: remove this
                                         />
                                     </label>
                                 </div>
