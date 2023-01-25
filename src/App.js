@@ -490,9 +490,9 @@ class App extends Component {
                 <div className="empty_graph_container">
                     <i className="fa-regular fa-face-smile"></i>
                     <div className="empty_graph_container_description">
-                        <h4>Search for a recipe and click it to <br /> build a network graph of similar recipes!</h4>
+                        <h4>Search for a recipe and click it to build a network graph of similar recipes!</h4>
                         <p>
-                            You can then drag to explore the graph and search each node.<br />
+                            You can then drag to explore the graph and search each node.
                             Nodes are colored based on preparation time and sized based on number of servings.
                         </p>
                     </div>

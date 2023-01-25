@@ -735,6 +735,7 @@ body {
             height: 100%;
             color: var(--header-color);
             transition: all .2s ease-in-out;
+            padding: 0 10%;
 
             i {
                 font-size: 4.25rem;
@@ -810,7 +811,11 @@ footer {
             gap: .75rem;
 
             a {
+                display: flex;
+                align-items: center;
+                justify-content: center;
                 color: inherit;
+                text-decoration: none;
 
                 i {
                     font-size: 1rem;
