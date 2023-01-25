@@ -551,7 +551,9 @@ class App extends Component {
                                             value={this.selectedCategory}
                                             onChange={this.handleChangeCategorySelect}
                                             options={mealType}
-                                            // className="genres_select_input"
+                                            onBlur={event => event.preventDefault()}
+                                            // https://react-select.com/styles#the-styles-prop
+                                            // TODO: remove this
                                         />
                                     </label>
                                 </div>
