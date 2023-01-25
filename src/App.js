@@ -104,6 +104,15 @@ class App extends Component {
 
     handleChangeCategorySelect(selectedOption) {
         this.setState({ selectedCategory: selectedOption});
+
+        // Blur the input element out of focus
+        const categorySelectElement = document.getElementById("react-select-2-input");
+        categorySelectElement.setAttribute('readonly', 'readonly'); // Force virtual keyboard on mobile screens to hide on input field.
+        setTimeout(function() {
+            categorySelectElement.blur();  // Actually unfocus element and close the virtual keyboard
+            // Remove readonly attribute after virtual keyboard is hidden.
+            categorySelectElement.removeAttribute('readonly');
+        }, 100);
     }
 
     handleChangeIsDarkMode() {
