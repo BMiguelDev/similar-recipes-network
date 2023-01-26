@@ -77,7 +77,7 @@ class App extends Component {
             this.setState({ isGraphLoading: true, isGraphBuilt: false });
             setTimeout(() => {
                 this.setState({ isGraphLoading: false, isGraphBuilt: true });
-            }, 100)
+            }, 500)
         }
     }
 
