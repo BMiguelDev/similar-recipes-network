@@ -152,18 +152,21 @@ class App extends Component {
         await axios.get(finalQueryString)
             .then((response) => {
                 if (response.status === 402 || response.status === 429) {
+                    console.log("API not reachable, using dummy data instead")
                     querySearchDataBurger.results.forEach(item => newSearchItemsResults.push(item));
                 } else {
                     response.data.results.forEach(item => newSearchItemsResults.push(item));
                 }
 
-                this.setState({ searchItemsResults: newSearchItemsResults });
+                //this.setState({ searchItemsResults: newSearchItemsResults });
             })
             .catch(err => {
                 console.log(err);
-                return null;
+                console.log("API not reachable, using dummy data instead")
+                querySearchDataBurger.results.forEach(item => newSearchItemsResults.push(item));
             });
 
+        this.setState({ searchItemsResults: newSearchItemsResults });
         this.setState({ isLoading: false, searchNameWasSubmitted: true, previouslySearchedName: this.state.searchName, previouslySelectedCategory: this.state.selectedCategory });
     }
 
@@ -240,13 +243,17 @@ class App extends Component {
         await axios.get('https://api.spoonacular.com/recipes/' + item.id + '/similar?apiKey=' + SPOONACULAR_API_KEY + '&number=' + this.state.numberOfRecipes)
             .then((response) => {
                 if (response.status === 402 || response.status === 429) {
+                    console.log("API not reachable, using dummy data instead");
                     queryData = queryDataBurgerSimilar1;
                 }
-                queryData = response.data;          //queryData holds the related recipes to the main recipe
+                else {
+                    queryData = response.data;          //queryData holds the related recipes to the main recipe
+                }
             })
             .catch(err => {
                 console.log(err);
-                return null;
+                console.log("API not reachable, using dummy data instead");
+                queryData = queryDataBurgerSimilar1;
             });
 
         //If there are no related recipes, alert user
@@ -323,35 +330,40 @@ class App extends Component {
                 }
 
                 // Get similar nodes to each recipe
-                let queryDataEachRelatedRecipe = [];     //Initialize variable that will hold the query response    
+                let queryDataEachRelatedRecipe = [];     // Initialize variable that will hold the query response 
+                
+                // Define function to handle API unavailability by working with dummy data
+                const getDummyDataForEachRelatedRecipe = (index) => {
+                    switch (index + 1) {
+                        case 1:
+                            return queryDataBurgerSimilar11;
+                        case 2:
+                            return queryDataBurgerSimilar12;
+                        case 3:
+                            return queryDataBurgerSimilar13;
+                        case 4:
+                            return queryDataBurgerSimilar14;
+                        case 5:
+                            return queryDataBurgerSimilar15;
+                        default:
+                            return queryDataBurgerSimilar11;
+                    }
+                }
+                
                 await axios.get('https://api.spoonacular.com/recipes/' + relatedRecipes[j].id + '/similar?apiKey=' + SPOONACULAR_API_KEY + '&number=' + this.state.numberOfRecipes)
                     .then((response) => {
                         if (response.status === 402 || response.status === 429) {
-                            switch (j + 1) {
-                                case 1:
-                                    queryDataEachRelatedRecipe = queryDataBurgerSimilar11;
-                                    break;
-                                case 2:
-                                    queryDataEachRelatedRecipe = queryDataBurgerSimilar12;
-                                    break;
-                                case 3:
-                                    queryDataEachRelatedRecipe = queryDataBurgerSimilar13;
-                                    break;
-                                case 4:
-                                    queryDataEachRelatedRecipe = queryDataBurgerSimilar14;
-                                    break;
-                                case 5:
-                                    queryDataEachRelatedRecipe = queryDataBurgerSimilar15;
-                                    break;
-                                default:
-                                    queryDataEachRelatedRecipe = queryDataBurgerSimilar11;
-                            }
+                            console.log("API not reachable, using dummy data instead");
+                            queryDataEachRelatedRecipe = getDummyDataForEachRelatedRecipe(j);
                         }
-                        queryDataEachRelatedRecipe = response.data;  //queryDataEachRelatedRecipe holds the related recipes to each of the main recipe's related recipes
+                        else {
+                            queryDataEachRelatedRecipe = response.data;  //queryDataEachRelatedRecipe holds the related recipes to each of the main recipe's related recipes
+                        }
                     })
                     .catch(err => {
                         console.log(err);
-                        return null;
+                        console.log("API not reachable, using dummy data instead");
+                        queryDataEachRelatedRecipe = getDummyDataForEachRelatedRecipe(j);
                     });
 
                 let eachRecipeRelatedRecipes = [];       //Initialize variable that will hold the recipes related to each of the main recipe's related recipes
@@ -515,7 +527,7 @@ class App extends Component {
     }
 
     // TODO: 
-    // - fix static data not showing when API calls arent available/no internet
+    // - test if resizing screen to a landscape orientation still has a bug caused by graph not being removed from view on time
 
 
     render() {
