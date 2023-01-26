@@ -69,16 +69,16 @@ class App extends Component {
     }
 
     handleResize() {
-        const appDivElement = document.querySelector(".app_container");
-        appDivElement.style.height = `${window.innerHeight}px`;
-
         // Remove graph from view and render it again to avoid graph positioning bug
         if (this.state.graphJson && this.state.isGraphBuilt) {
             this.setState({ isGraphLoading: true, isGraphBuilt: false });
             setTimeout(() => {
                 this.setState({ isGraphLoading: false, isGraphBuilt: true });
-            }, 500)
+            }, 100)
         }
+
+        const appDivElement = document.querySelector(".app_container");
+        appDivElement.style.height = `${window.innerHeight}px`;
     }
 
     handleClick(event) {
