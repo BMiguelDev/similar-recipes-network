@@ -71,6 +71,12 @@ class App extends Component {
     handleResize() {
         const appDivElement = document.querySelector(".app_container");
         appDivElement.style.height = `${window.innerHeight}px`;
+
+        // Remove graph from view and render it again to avoid graph positioning bug
+        this.setState({ isGraphLoading: true, isGraphBuilt: false });
+        setTimeout(() => {
+            this.setState({ isGraphLoading: false, isGraphBuilt: true });
+        }, 100)
     }
 
     handleClick(event) {
@@ -508,7 +514,6 @@ class App extends Component {
 
     // TODO: 
     // - fix static data not showing when API calls arent available/no internet
-    // - on resize, unbuild graph and rebuild graph with the data present in the state
 
 
     render() {
