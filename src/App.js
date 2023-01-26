@@ -121,6 +121,11 @@ class App extends Component {
 
     async handleSubmit(event) {
         event.preventDefault();
+
+        // Remove focus from input element
+        const inputElement = document.querySelector(".recipe_search_input");
+        inputElement.blur();
+
         if (this.state.searchName === this.state.previouslySearchedName && this.state.selectedCategory.value === this.state.previouslySelectedCategory.value) return;
 
         this.setState({ isLoading: true, searchItemsResults: [], nodeClicked: null, previousNodeClickedId: "" });
@@ -501,7 +506,10 @@ class App extends Component {
         }
     }
 
-    // TODO: fix static data not showing when API calls arent available/no internet
+    // TODO: 
+    // - fix static data not showing when API calls arent available/no internet
+    // - on resize, unbuild graph and rebuild graph with the data present in the state
+
 
     render() {
         const mealType = [
