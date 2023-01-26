@@ -73,10 +73,12 @@ class App extends Component {
         appDivElement.style.height = `${window.innerHeight}px`;
 
         // Remove graph from view and render it again to avoid graph positioning bug
-        this.setState({ isGraphLoading: true, isGraphBuilt: false });
-        setTimeout(() => {
-            this.setState({ isGraphLoading: false, isGraphBuilt: true });
-        }, 100)
+        if (this.state.graphJson && this.state.isGraphBuilt) {
+            this.setState({ isGraphLoading: true, isGraphBuilt: false });
+            setTimeout(() => {
+                this.setState({ isGraphLoading: false, isGraphBuilt: true });
+            }, 100)
+        }
     }
 
     handleClick(event) {
