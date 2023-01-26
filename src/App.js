@@ -71,12 +71,15 @@ class App extends Component {
     handleResize() {
         // Remove graph from view and render it again to avoid graph positioning bug
         if (this.state.graphJson && this.state.isGraphBuilt) {
+            const graphElement = document.querySelector(".graph_container>div");
+            graphElement.style.display = 'none';
             this.setState({ isGraphLoading: true, isGraphBuilt: false });
             setTimeout(() => {
                 this.setState({ isGraphLoading: false, isGraphBuilt: true });
-            }, 100)
+            }, 500)
         }
 
+        // Update app's height based on current window height
         const appDivElement = document.querySelector(".app_container");
         appDivElement.style.height = `${window.innerHeight}px`;
     }
@@ -528,6 +531,7 @@ class App extends Component {
 
     // TODO: 
     // - test if resizing screen to a landscape orientation still has a bug caused by graph not being removed from view on time
+    // - Fix responsiveness for small screens (near 350 height/width) and for other remaining breakpoints)
 
 
     render() {
