@@ -442,7 +442,7 @@ class App extends Component {
 
                 return (
                     <Row className="recipe_clicked_description">
-                        <Tooltip title="Create graph!" placement="right">
+                        <Tooltip title={<span className='tooltip_container'>Create graph!</span>}/*"Create graph!"*/ placement="right">
                             <button type="submit" onClick={() => this.buildGraphAlgorithm1(this.state.nodeClicked)}><h4> {recipeName} </h4></button>
                         </Tooltip>
 
@@ -454,10 +454,10 @@ class App extends Component {
                                 />
                             </a>
                             <div className="recipe_characteristics_container">
-                                <Tooltip title="Preparation" placement="left">
+                                <Tooltip title={<span className='tooltip_container'>Preparation</span>}/*"Preparation"*/ placement="left">
                                     <span>{this.state.nodeClicked.readyInMinutes}<br />Min.</span>
                                 </Tooltip>
-                                <Tooltip title="Servings" placement="right">
+                                <Tooltip title={<span className='tooltip_container'>Servings</span>}/*"Servings"*/ placement="right">
                                     <span>{this.state.nodeClicked.servings}<br />Ser.</span>
                                 </Tooltip>
                             </div>
@@ -490,7 +490,7 @@ class App extends Component {
         if (this.state.isGraphBuilt) {
             if (this.state.selectedLayout === 'Force Atlas 2') {
                 return (
-                    <Sigma className="sigma_graph" style={{ width: "100%", height: "100%" }} onClickNode={this.handleGraphNodeClick} graph={this.state.graphJson} settings={{ drawEdges: true, clone: false, defaultLabelColor: 'rgba(43, 144, 222, 0.975)' }}>
+                    <Sigma className="sigma_graph" style={{ width: "100%", height: "100%", fontSize: "2rem" }} onClickNode={this.handleGraphNodeClick} graph={this.state.graphJson} settings={{ drawEdges: true, clone: false, defaultLabelColor: 'rgba(43, 144, 222, 0.975)' }}>
                         {/* <RelativeSize initialSize={1} /> */}
                         <RandomizeNodePositions />
                         <ForceAtlas2 easing="cubicInOut" gravity={2} /* this attracts nodes connected with edges of positive weight*/ edgeWeightInfluence={4} />
@@ -530,9 +530,8 @@ class App extends Component {
     }
 
     // TODO: 
-    // - test if resizing screen to a landscape orientation still has a bug caused by graph not being removed from view on time
     // - Fix responsiveness for small screens (near 350 height/width) and for other remaining breakpoints)
-
+    // - split app component into several smaller components
 
     render() {
         const mealType = [
@@ -599,8 +598,8 @@ class App extends Component {
                                             onChange={this.handleChangeCategorySelect}
                                             options={mealType}
 
-                                            onBlur={event => event.preventDefault()}
-                                            blurInputOnSelect={false}
+                                            // onBlur={event => event.preventDefault()}
+                                            // blurInputOnSelect={false}
                                         // https://react-select.com/styles#the-styles-prop
                                         // TODO: remove this
                                         />
@@ -654,7 +653,7 @@ class App extends Component {
                     {this.state.isDarkMode ? (<i className="fa-solid fa-moon"></i>) : (<i className="fa-solid fa-sun"></i>)}
                 </div>
 
-                <Tooltip title="Help" placement="bottom">
+                <Tooltip title={<span className='tooltip_container'>Help</span>}/*"Help"*/ placement="bottom" >
                     <div className="app_information_button_container" onClick={this.handleToggleInfoSection}>
                         <i className="fa-solid fa-circle-info"></i>
                     </div>
