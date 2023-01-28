@@ -29,8 +29,12 @@ screen and (max-height: 350px) and (max-width: 350px) {
 
 
 // Media queries for mobile content (portrait)
-@media screen and (min-width: 380px) and (max-width: 500px) and (min-height: 350px),
-screen and (min-width: 250px) and (max-width: 650px) and (min-height: 600px) {
+// @media screen and (min-width: 351px) and (max-width: 500px) and (min-height: 351px),
+// screen and (min-width: 250px) and (max-width: 650px) and (min-height: 950px),
+// screen and (min-width: 300px) and (max-width: 650px) and (min-height: 500px) {
+@media screen and (min-width: 351px) and (max-width: 500px) and (min-height: 500px),
+screen and (min-width: 250px) and (max-width: 650px) and (min-height: 950px),
+screen and (min-width: 300px) and (max-width: 650px) and (min-height: 500px) {
 
     // Header content
     .header {
@@ -70,7 +74,8 @@ screen and (min-width: 250px) and (max-width: 650px) and (min-height: 600px) {
                 height: 100%;
                 width: 48.5%;
                 gap: unset;
-                justify-content: space-between;
+                // justify-content: space-between;
+                justify-content: space-around;
 
                 .sidebar_form_radio_container {
                     gap: 0;
@@ -244,6 +249,7 @@ screen and (min-width: 250px) and (max-width: 650px) and (min-height: 600px) {
                 overflow-y: scroll;
 
                 ul {
+                    min-width: 75%;
 
                     li {
                         font-size: .675rem;
@@ -509,21 +515,23 @@ screen and (min-width: 250px) and (max-width: 650px) and (min-height: 600px) {
 
 
 // Media queries for small mobile content (portrait)
-@media screen and (min-width: 250px) and (max-width: 380px) and (min-height: 350px) and (max-height: 780px) {
+// @media screen and (min-width: 250px) and (max-width: 351px) and (min-height: 350px) and (max-height: 500px), screen and (min-width: 250px) and (max-width: 300px) and (min-height: 350px) and (max-height: 950px) {
+@media screen and (min-width: 250px) and (max-width: 500px) and (min-height: 350px) and (max-height: 500px), screen and (min-width: 250px) and (max-width: 300px) and (min-height: 350px) and (max-height: 950px) {
 
     // Header content
     .header {
         justify-content: flex-start;
-        padding-left: 1rem;
-        height: 6%;
-        gap: .65rem;
+        padding-left: .5rem;
+        height: 5%;
+        gap: .4rem;
 
         h3 {
-            font-size: .95rem;
+            font-size: .675rem;
         }
 
         i {
-            font-size: 1rem;
+            //padding-top: 0;
+            font-size: .675rem;
         }
     }
 
@@ -532,15 +540,15 @@ screen and (min-width: 250px) and (max-width: 650px) and (min-height: 600px) {
     .main_container {
         display: flex;
         flex-direction: column;
-        padding: .5% 2%;
+        padding: .5% 1.5%;
         height: 87%;
         gap: 1.5%;
 
         // Side bar content
         .sidebar_content {
-            flex: 1;
-            //height: 42%;
+            flex: 2;
             height: unset;
+            max-height: 57.5%;
             width: 100%;
             flex-direction: row;
             //justify-content: center;
@@ -549,91 +557,122 @@ screen and (min-width: 250px) and (max-width: 650px) and (min-height: 600px) {
             .sidebar_form {
                 height: 100%;
                 width: 48.5%;
-                //gap: 2%;
+                display: flex;
+                flex-direction: column;
                 gap: unset;
-                justify-content: space-between;
-                // display: flex;
-                // flex-direction: column;
+                //justify-content: space-between;
+                justify-content: space-around;
 
                 .sidebar_form_radio_container {
                     gap: 0;
-                    //width: 90%;
 
                     label {
+                        //height: 70%;
 
                         p {
-                            font-size: .75rem;
+                            font-size: .55rem;
                         }
 
                         button {
-                            margin-left: .4rem;
-                            width: 15%;
-                            min-width: 15%;
+                            margin-left: .25rem;
+                            width: 10%;
+                            min-width: 10%;
+                            height: .75rem;
 
                             span:first-child {
-                                transform: scale(.55);
+                                transform: scale(.425);
                             }
                         }
                     }
 
                     .graph_layout_info {
-                        font-size: .5rem;
-                        top: -5%;
+                        font-size: .375rem;
                         right: 0%;
-                        width: 35%;
-                        padding: .1rem;
-                        line-height: .5rem;
+                        width: fit-content;
+                        max-width: 37.5%;
+                        padding: .05rem;
+                        line-height: .35rem;
+                        letter-spacing: 0rem;
+
                     }
 
                     .graph_layout_radio_select {
-                        padding-bottom: 0;
-                        //height: 2.5rem;
-                        gap: 7.5%;
+                        padding-top: .2rem;
+                        padding-bottom: 0rem;
                         flex-direction: row;
                         flex-wrap: unset;
-                        justify-content: flex-start;
-                        padding: 0 10%;
-                        padding-top: .2rem;
-                        align-items: center;
+                        justify-content: space-around;
 
                         .form_lab {
-                            flex-direction: column;
+                            gap: 5%;
+                            width: 40%;
 
                             &>span:nth-of-type(1) {
                                 padding: 0;
-                                width: 1rem;
+                                width: 25%;
                                 height: 1rem;
 
                                 span {
-                                    height: 100%;
 
                                     div {
-                                        transform: scale(.55);
+                                        transform: scale(.475);
                                     }
                                 }
                             }
 
                             &>span:nth-of-type(2) {
-                                font-size: 0.55rem;
+                                font-size: 0.425rem;
+                                line-height: .45rem;
+                                // text-align: center;
+                                display: flex;
+                                align-items: center;
+                                justify-content: flex-start;
+                                text-indent: unset;
                             }
                         }
                     }
                 }
 
                 .options_filter {
-                    padding: 0;
+                    //padding: .2rem 0;
                     //padding-bottom: .25rem;
-                    //width: 90%;
 
                     .number_of_games_slider_container {
-                        padding-bottom: .4rem;
+                        padding-bottom: .1rem;
                         margin-right: .35rem;
 
                         label {
-                            font-size: .75rem;
+                            font-size: .55rem;
 
                             span {
                                 padding: 0;
+
+                                span:last-of-type {
+                                    width: 9px;
+                                    height: 9px;
+                                    top: 50%;
+                                    margin-left: -2px;
+
+                                    span {
+                                        left: 1px;
+                                        top: -12px;
+
+                                        span {
+                                            width: 16px;
+                                            height: 16px;
+
+                                            span {
+                                                text-align: center;
+                                                font-size: .565rem;
+                                                line-height: 1rem;
+                                                display: flex;
+                                                align-items: center;
+                                                justify-content: center;
+                                                margin-left: -1px;
+                                            }
+                                        }
+                                    }
+                                }
                             }
                         }
                     }
@@ -641,62 +680,44 @@ screen and (min-width: 250px) and (max-width: 650px) and (min-height: 600px) {
                     .genres_select_input_container {
 
                         label {
-                            font-size: .75rem;
-
-                            // .genres_select_input {
-                            //     width: 100% !important;
-
-                            //     div {
-
-                            //         .input-area {
-                            //             margin: .1rem .1rem;
-                            //             padding: 0rem;
-
-                            //             input {
-                            //                 padding: .05rem .35rem;
-                            //             }
-                            //         }
-
-                            //         .option-area {
-                            //             width: 101%;
-                            //             left: -8%;
-                            //             top: 105%;
-                            //             max-height: 10.75vh !important;
-
-                            //             p {
-                            //                 padding: .025rem;
-                            //                 font-size: .65rem;
-                            //             }
-                            //         }
-                            //     }
-                            // }
+                            font-size: .55rem;
 
                             &>div {
+                                margin-top: .125rem;
 
                                 &>div:nth-of-type(1) {
-                                    font-size: .65rem;
-                                    letter-spacing: .015rem;
-                                    min-height: 20px;
+                                    font-size: .525rem;
+                                    letter-spacing: .025rem;
+                                    min-height: 12px;
 
                                     &>div:nth-of-type(1) {
-                                        padding: .1rem .25rem;
+                                        padding: .025rem .25rem;
+
+                                        &>div:nth-of-type(2) {
+                                            margin: 0;
+                                        }
                                     }
 
                                     &>div:nth-of-type(2) {
 
                                         span {
-                                            margin: 4px 0;
+                                            margin: 3px 0;
                                         }
 
                                         div {
-                                            padding: 0 .15rem;
+                                            padding: 0 .1rem;
+
+                                            svg {
+                                                height: 14px;
+                                                width: 14px;
+                                            }
                                         }
                                     }
                                 }
 
                                 &>div:nth-of-type(2) {
                                     //margin-top: .02rem;
-                                    margin-bottom: .1rem;
+                                    margin-bottom: .05rem;
                                     //padding: .05rem 0;
 
                                     &>div {
@@ -704,10 +725,9 @@ screen and (min-width: 250px) and (max-width: 650px) and (min-height: 600px) {
                                         padding: .05rem 0;
 
                                         &>div {
-                                            padding: .25rem .65rem;
-                                            font-size: .625rem;
-                                            letter-spacing: .015rem;
-                                            //transition: none;
+                                            padding: .125rem .5rem;
+                                            font-size: .5rem;
+                                            letter-spacing: .0125rem;
                                         }
                                     }
                                 }
@@ -717,28 +737,26 @@ screen and (min-width: 250px) and (max-width: 650px) and (min-height: 600px) {
                 }
 
                 .recipe_search_input_container {
-                    //width: 90%;
 
                     label {
-                        font-size: .75rem;
+                        font-size: .55rem;
 
                         .recipe_search_input {
                             width: 100%;
-                            padding: .25rem;
-                            margin-top: .25rem;
-                            font-size: .65rem;
+                            padding: .15rem .35rem;
+                            margin-top: .125rem;
+                            font-size: .55rem;
                         }
                     }
                 }
 
                 .recipe_search_button_container {
-                    //width: 90%;
-                    //margin-top: .5rem;
 
                     .recipe_search_button {
-                        padding: .05rem 0;
-                        font-size: .675rem;
-                        min-width: 40%;
+                        padding: .05rem 0rem;
+                        font-size: .5rem;
+                        min-width: 45%;
+                        line-height: 1.5;
                     }
                 }
             }
@@ -748,11 +766,11 @@ screen and (min-width: 250px) and (max-width: 650px) and (min-height: 600px) {
                 height: 100%;
                 margin-top: 0;
                 //padding-right: 1rem;
-                gap: .65rem;
+                gap: .5rem;
 
                 i,
                 p {
-                    font-size: .9rem;
+                    font-size: .65rem;
                 }
             }
 
@@ -765,11 +783,13 @@ screen and (min-width: 250px) and (max-width: 650px) and (min-height: 600px) {
                 overflow-y: scroll;
 
                 ul {
+                    min-width: 75%;
 
                     li {
-                        font-size: .65rem;
-                        margin: .3rem 0;
-                        padding: .15rem .5rem;
+                        font-size: .5rem;
+                        margin: .2rem 0;
+                        padding: .05rem .2rem;
+                        line-height: .55rem;
 
                         &:hover {
                             color: var(--recipe-search-results-color);
@@ -789,7 +809,7 @@ screen and (min-width: 250px) and (max-width: 650px) and (min-height: 600px) {
 
                 p {
                     margin: 0;
-                    font-size: .725rem;
+                    font-size: .575rem;
                 }
             }
 
@@ -798,15 +818,16 @@ screen and (min-width: 250px) and (max-width: 650px) and (min-height: 600px) {
                 height: 100%;
                 align-items: center;
                 justify-content: center;
-                gap: 2%;
+                gap: .5%;
 
                 button {
-                    padding: .1rem .25rem;
-                    font-size: .525rem;
+                    padding: .1rem .2rem;
+                    font-size: .425rem;
                     width: 100%;
-                    height: 17%;
-                    line-height: .725rem;
-                    letter-spacing: 0.05rem;
+                    height: 19%;
+                    line-height: .5rem;
+                    word-break: break-all;
+                    letter-spacing: 0.045rem;
 
                     &:hover {
                         background-color: var(--recipe-clicked-button-bg-color);
@@ -818,12 +839,12 @@ screen and (min-width: 250px) and (max-width: 650px) and (min-height: 600px) {
                     //gap: 5%;
                     gap: unset;
                     justify-content: space-around;
-                    height: 81%;
+                    height: 80.5%;
 
                     a {
                         text-align: center;
-                        max-height: 75%;
-                        max-width: 90%;
+                        max-height: 65%;
+                        max-width: 80%;
 
                         img {
                             max-height: 100%;
@@ -831,9 +852,9 @@ screen and (min-width: 250px) and (max-width: 650px) and (min-height: 600px) {
                         }
 
                         &::before {
-                            top: 100.25%;
+                            top: 100.5%;
                             left: 0%;
-                            font-size: .6rem;
+                            font-size: .45rem;
                             height: 7.5%;
                             width: 100%;
                             z-index: 2;
@@ -859,10 +880,10 @@ screen and (min-width: 250px) and (max-width: 650px) and (min-height: 600px) {
 
                         span {
                             padding: .1rem;
-                            font-size: .5rem;
-                            line-height: .575rem;
-                            width: 1.9rem;
-                            height: 1.9rem;
+                            font-size: .4rem;
+                            line-height: .4rem;
+                            width: 1.3rem;
+                            height: 1.3rem;
                         }
                     }
                 }
@@ -872,27 +893,28 @@ screen and (min-width: 250px) and (max-width: 650px) and (min-height: 600px) {
         //Graph content
         .graph_container {
             //height: 52%;
-            flex: 1;
+            flex: 1.5;
             width: 100%;
 
             .empty_graph_container {
-                gap: 5%;
+                gap: 4%;
+                padding: 0 2.5%;
 
                 i {
-                    font-size: 2.5rem;
+                    font-size: 1.5rem;
                 }
 
                 .empty_graph_container_description {
-                    gap: .9rem;
+                    gap: .25rem;
 
                     h4 {
-                        font-size: .9rem;
-                        line-height: 1.2rem;
+                        font-size: .7rem;
+                        line-height: .9rem;
                     }
 
                     p {
-                        font-size: .725rem;
-                        line-height: 1rem;
+                        font-size: .55rem;
+                        line-height: .7rem;
                     }
                 }
             }
@@ -902,25 +924,26 @@ screen and (min-width: 250px) and (max-width: 650px) and (min-height: 600px) {
 
     // Footer content
     footer {
-        padding: .1rem .25rem;
-        //gap: .4rem;
-        height: 4%;
+        padding: .15rem .15rem;
+        gap: .5%;
+        height: 5%;
 
         .footer_api_description {
 
             p {
-                font-size: .55rem;
+                font-size: .425rem;
                 letter-spacing: .025rem;
+                line-height: .45rem;
             }
         }
 
         .footer_info {
-            gap: .25rem;
+            gap: .1rem;
 
             .footer_text {
-                font-size: .55rem;
-                //text-align: center;
+                font-size: .425rem;
                 letter-spacing: .015rem;
+                line-height: .45rem;
             }
 
             .footer_icon_container {
@@ -929,8 +952,8 @@ screen and (min-width: 250px) and (max-width: 650px) and (min-height: 600px) {
                 a {
 
                     i {
-                        font-size: .75rem;
-                        padding: .2rem;
+                        font-size: .55rem;
+                        padding: .15rem;
 
                         &:hover {
                             color: var(--footer-color);
@@ -942,7 +965,7 @@ screen and (min-width: 250px) and (max-width: 650px) and (min-height: 600px) {
                 a:nth-of-type(1),
                 a:nth-of-type(2) {
                     i {
-                        font-size: .65rem;
+                        font-size: .45rem;
                     }
                 }
             }
@@ -952,10 +975,10 @@ screen and (min-width: 250px) and (max-width: 650px) and (min-height: 600px) {
 
     // Dark mode content
     .dark_mode_container {
-        top: 1.5%;
+        top: .75%;
         right: 1%;
-        width: 1.35rem;
-        height: 1.35rem;
+        width: .75rem;
+        height: .75rem;
 
         &:hover {
             background-color: var(--dark-mode-container-bg-color);
@@ -966,17 +989,17 @@ screen and (min-width: 250px) and (max-width: 650px) and (min-height: 600px) {
         }
 
         i {
-            font-size: .8rem;
+            font-size: .515rem;
         }
     }
 
 
     // Info button content
     .app_information_button_container {
-        top: 1.5%;
-        right: 11.5%;
-        width: 1.35rem;
-        height: 1.35rem;
+        top: .75%;
+        right: 8.5%;
+        width: .75rem;
+        height: .75rem;
 
         &:hover {
             background-color: var(--dark-mode-container-bg-color);
@@ -987,7 +1010,7 @@ screen and (min-width: 250px) and (max-width: 650px) and (min-height: 600px) {
         }
 
         i {
-            font-size: .8rem;
+            font-size: .515rem;
         }
     }
 
@@ -1027,11 +1050,17 @@ screen and (min-width: 250px) and (max-width: 650px) and (min-height: 600px) {
             }
         }
     }
+
+
+    // Tooltip content
+    .tooltip_container {
+        font-size: .55rem;
+    }
 }
 
 
 // Media queries for mobile content (landscape)
-@media screen and (min-height: 300px) and (max-height: 650px) and (min-width: 501px) and (max-width: 1000px) {
+@media screen and (min-height: 300px) and (max-height: 650px) and (min-width: 501px) /* and (max-width: 1000px)*/ {
 
     // Header content
     .header {
@@ -1071,7 +1100,8 @@ screen and (min-width: 250px) and (max-width: 650px) and (min-height: 600px) {
                 display: flex;
                 flex-direction: column;
                 gap: unset;
-                justify-content: space-between;
+                //justify-content: space-between;
+                justify-content: space-around;
 
                 .sidebar_form_radio_container {
                     gap: 0;
@@ -2042,21 +2072,22 @@ screen and (min-width: 250px) and (max-width: 650px) and (min-height: 600px) {
 
 
 // Media queries for tablet content (portrait)
-@media screen and (min-height: 651px) and (min-width: 700px) and (max-width: 1000px) {
+@media screen and (min-height: 650px) and (min-width: 650px) and (max-width: 800px), screen and (min-height: 900px) and (min-width: 650px) and (max-width: 900px) {
 
     // Header content
     .header {
         justify-content: center;
-        height: 7%;
-        gap: 1rem;
+        //padding-left: 1rem;
+        height: 5%;
+        gap: .65rem;
 
         h3 {
-            font-size: 1.65rem;
+            font-size: 1rem;
         }
 
         i {
-            padding-top: .35rem;
-            font-size: 1.8rem;
+            //padding-top: .2rem;
+            font-size: 1rem;
         }
     }
 
@@ -2065,125 +2096,143 @@ screen and (min-width: 250px) and (max-width: 650px) and (min-height: 600px) {
     .main_container {
         display: flex;
         flex-direction: column;
-        padding: 1.5rem;
-        height: 95%;
-        gap: 1.5rem;
+        padding: .5% 2%;
+        height: 88.5%;
+        gap: 1.5%;
 
         // Side bar content
         .sidebar_content {
-            height: 42%;
-            display: flex;
-            //align-items: center;
-            justify-content: flex-start;
-            gap: 2rem;
-
-            .loading_row {
-                width: 46%;
-                height: 100%;
-                padding-right: 1rem;
-                gap: .85rem;
-
-                i,
-                p {
-                    font-size: 1.25rem;
-                }
-            }
+            flex: 1;
+            height: unset;
+            width: 100%;
+            flex-direction: row;
+            gap: 3%;
 
             .sidebar_form {
                 height: 100%;
-                width: 46%;
-                display: flex;
-                flex-direction: column;
+                width: 48.5%;
+                gap: unset;
+                // justify-content: space-between;
+                justify-content: space-around;
 
                 .sidebar_form_radio_container {
-                    gap: .65rem;
-                    width: 90%;
-                    padding-bottom: .5rem;
+                    gap: 0;
 
                     label {
 
                         p {
-                            font-size: 1.1rem;
+                            font-size: .85rem;
                         }
 
                         button {
-                            margin-left: .4rem;
-                            width: 20%;
-                            min-width: 20%;
+                            margin-left: .25rem;
+                            width: 15%;
+                            min-width: 15%;
 
                             span:first-child {
-                                transform: scale(.8);
+                                transform: scale(.625);
                             }
                         }
                     }
 
                     .graph_layout_info {
-                        font-size: .75rem;
+                        font-size: .65rem;
                         width: 37.5%;
-                        padding: .55rem;
-                        right: 0;
+                        padding: .6rem;
+                        line-height: .575rem;
                     }
 
                     .graph_layout_radio_select {
-                        padding-bottom: .5rem;
+                        gap: 7.5%;
+                        flex-direction: row;
+                        flex-wrap: unset;
+                        justify-content: flex-start;
+                        padding: 0 10%;
+                        padding-top: .25rem;
+                        align-items: center;
+                        padding-top: .4rem;
 
                         .form_lab {
+                            flex-direction: column;
 
                             &>span:nth-of-type(1) {
-                                padding: .1rem .2rem;
+                                padding: 0;
+                                width: 1rem;
+                                height: 1rem;
 
                                 span {
+                                    height: 100%;
 
                                     div {
-                                        transform: scale(.85);
+                                        transform: scale(.675);
                                     }
                                 }
                             }
 
                             &>span:nth-of-type(2) {
-                                font-size: 0.8rem;
+                                font-size: 0.675rem;
                             }
                         }
                     }
                 }
 
                 .options_filter {
-                    padding: .2rem 0;
-                    padding-bottom: .5rem;
-                    width: 90%;
+                    padding: 0;
 
                     .number_of_games_slider_container {
+                        padding-bottom: .75rem;
                         margin-right: .35rem;
 
                         label {
-                            font-size: 1.1rem;
+                            font-size: .85rem;
+
+                            span {
+                                padding: 0;
+                            }
                         }
                     }
 
                     .genres_select_input_container {
 
                         label {
-                            font-size: 1.1rem;
+                            font-size: .85rem;
 
-                            .genres_select_input {
-                                width: 100% !important;
+                            &>div {
 
-                                div {
+                                &>div:nth-of-type(1) {
+                                    font-size: .75rem;
+                                    letter-spacing: .025rem;
+                                    min-height: 22px;
 
-                                    .input-area {
-                                        margin: .6rem .1rem;
-                                        padding: .45rem;
+                                    &>div:nth-of-type(1) {
+                                        padding: .1rem .35rem;
                                     }
 
-                                    .option-area {
-                                        width: 102%;
-                                        left: -4.25%;
-                                        top: 105%;
-                                        max-height: 15.5vh !important;
+                                    &>div:nth-of-type(2) {
 
-                                        p {
-                                            padding: .45rem;
-                                            font-size: .875rem;
+                                        span {
+                                            margin: 4px 0;
+                                        }
+
+                                        div {
+                                            padding: 0 .2rem;
+                                        }
+                                    }
+                                }
+
+                                &>div:nth-of-type(2) {
+                                    //margin-top: .02rem;
+                                    margin-bottom: .1rem;
+                                    //padding: .05rem 0;
+
+                                    &>div {
+                                        max-height: 10vh;
+                                        padding: .05rem 0;
+
+                                        &>div {
+                                            padding: .285rem .65rem;
+                                            font-size: .725rem;
+                                            letter-spacing: .015rem;
                                         }
                                     }
                                 }
@@ -2193,44 +2242,57 @@ screen and (min-width: 250px) and (max-width: 650px) and (min-height: 600px) {
                 }
 
                 .recipe_search_input_container {
-                    width: 90%;
 
                     label {
-                        font-size: 1.1rem;
+                        font-size: .85rem;
 
                         .recipe_search_input {
                             width: 100%;
-                            padding: .7rem;
-                            margin-top: .6rem;
+                            padding: .3rem .5rem;
+                            margin-top: .25rem;
+                            font-size: .75rem;
                         }
                     }
                 }
 
                 .recipe_search_button_container {
-                    width: 90%;
-                    margin-top: 1.1rem;
 
                     .recipe_search_button {
-                        padding: .35rem 0rem;
+                        padding: .1rem 0;
+                        font-size: .775rem;
+                        min-width: 45%;
                     }
                 }
             }
 
-            .recipe_title_search_results {
+            .loading_row {
+                width: 48.5%;
+                height: 100%;
                 margin-top: 0;
-                width: 46%;
+                //padding-right: 1rem;
+                gap: .65rem;
+
+                i,
+                p {
+                    font-size: 1rem;
+                }
+            }
+
+            .recipe_title_search_results {
+                width: 48.5%;
                 height: 100%;
                 display: flex;
                 align-items: center;
                 justify-content: center;
+                overflow-y: scroll;
 
                 ul {
-                    margin-bottom: 1rem;
+                    min-width: 75%;
 
                     li {
-                        font-size: 1.05rem;
-                        margin: .75rem 0;
-                        padding: .35rem 1rem;
+                        font-size: .75rem;
+                        margin: .35rem 0;
+                        padding: .25rem .45rem;
 
                         &:hover {
                             color: var(--recipe-search-results-color);
@@ -2244,60 +2306,58 @@ screen and (min-width: 250px) and (max-width: 650px) and (min-height: 600px) {
 
             .recipe_title_search_results_empty {
                 margin-top: 0;
-                width: 46%;
+                width: 48.5%;
+                padding: 0 7.5%;
+                height: 100%;
 
                 p {
-                    font-size: 1.05rem;
-                    line-height: 1.5rem;
+                    margin: 0;
+                    font-size: .825rem;
                 }
             }
 
             .recipe_clicked_description {
-                margin-top: .5rem;
-                width: 46%;
+                width: 48.5%;
                 height: 100%;
-                display: flex;
-                flex-direction: column;
                 align-items: center;
-                gap: .5rem;
+                justify-content: center;
+                gap: 2%;
 
                 button {
-                    padding: 0 .75rem;
-                    font-size: .85rem;
+                    padding: .1rem .45rem;
+                    font-size: .65rem;
                     width: 100%;
-                    height: 17.5%;
-                    line-height: 1.15rem;
+                    height: 16%;
+                    line-height: .825rem;
+                    letter-spacing: 0.06rem;
 
                     &:hover {
                         background-color: var(--recipe-clicked-button-bg-color);
                         color: var(--recipe-clicked-button-color);
                     }
-
-                    h4 {
-                        margin: 0;
-                        height: 100%;
-                        overflow-y: hidden;
-                        display: flex;
-                        justify-content: center;
-                        align-items: center;
-                    }
                 }
 
                 .recipe_information_charecteristics_container {
-                    gap: 1.5rem;
+                    //gap: 5%;
+                    gap: unset;
+                    justify-content: space-around;
+                    height: 82%;
 
                     a {
                         text-align: center;
+                        max-height: 67.5%;
+                        max-width: 90%;
 
                         img {
-                            max-width: 87.5%;
-                            margin: .5rem 0;
+                            max-height: 100%;
+                            max-width: 100%;
                         }
 
                         &::before {
-                            top: 76%;
-                            left: 0;
-                            font-size: 1rem;
+                            top: 100.5%;
+                            left: 0%;
+                            font-size: .65rem;
+                            height: 7.5%;
                             width: 100%;
                             z-index: 2;
                             visibility: visible;
@@ -2318,12 +2378,14 @@ screen and (min-width: 250px) and (max-width: 650px) and (min-height: 600px) {
                     }
 
                     .recipe_characteristics_container {
-                        gap: 3rem;
+                        height: 18.5%;
 
                         span {
-                            padding: .4rem;
-                            width: 17.5%;
-                            font-size: .85rem;
+                            padding: .1rem;
+                            font-size: .575rem;
+                            line-height: .6rem;
+                            width: 2.15rem;
+                            height: 2.15rem;
                         }
                     }
                 }
@@ -2332,24 +2394,27 @@ screen and (min-width: 250px) and (max-width: 650px) and (min-height: 600px) {
 
         //Graph content
         .graph_container {
-            height: 52%;
+            flex: 1;
+            width: 100%;
 
             .empty_graph_container {
-                gap: 2rem;
+                gap: 5%;
 
                 i {
-                    font-size: 5rem;
+                    font-size: 3rem;
                 }
 
                 .empty_graph_container_description {
-                    gap: 1rem;
+                    gap: .9rem;
 
                     h4 {
-                        font-size: 1.7rem;
+                        font-size: 1.15rem;
+                        line-height: 1.25rem;
                     }
 
                     p {
-                        font-size: 1.35rem;
+                        font-size: .85rem;
+                        line-height: 1.05rem;
                     }
                 }
             }
@@ -2359,37 +2424,34 @@ screen and (min-width: 250px) and (max-width: 650px) and (min-height: 600px) {
 
     // Footer content
     footer {
-        position: fixed;
-        bottom: 0;
-        left: 0;
-        padding: .3rem 1rem;
-        gap: .25rem;
-        height: 5.5%;
+        padding: .15rem .5rem;
+        height: 3.5%;
 
         .footer_api_description {
 
             p {
-                font-size: 1rem;
+                font-size: .575rem;
+                letter-spacing: .025rem;
             }
         }
 
         .footer_info {
-            gap: 1rem;
+            gap: .25rem;
 
             .footer_text {
-                font-size: 1rem;
-                text-align: center;
-                letter-spacing: .0175rem;
+                font-size: .575rem;
+                //text-align: center;
+                letter-spacing: .02rem;
             }
 
             .footer_icon_container {
-                gap: .75rem;
+                gap: .2rem;
 
                 a {
 
                     i {
-                        font-size: 1.6rem;
-                        padding: .4rem;
+                        font-size: .725rem;
+                        padding: .25rem;
 
                         &:hover {
                             color: var(--footer-color);
@@ -2401,7 +2463,7 @@ screen and (min-width: 250px) and (max-width: 650px) and (min-height: 600px) {
                 a:nth-of-type(1),
                 a:nth-of-type(2) {
                     i {
-                        font-size: 1.4rem;
+                        font-size: .625rem;
                     }
                 }
             }
@@ -2411,10 +2473,10 @@ screen and (min-width: 250px) and (max-width: 650px) and (min-height: 600px) {
 
     // Dark mode content
     .dark_mode_container {
-        top: 1.65%;
-        right: 1.5%;
-        width: 2.65rem;
-        height: 2.65rem;
+        top: .75%;
+        right: 2%;
+        width: 1.35rem;
+        height: 1.35rem;
 
         &:hover {
             background-color: var(--dark-mode-container-bg-color);
@@ -2425,17 +2487,17 @@ screen and (min-width: 250px) and (max-width: 650px) and (min-height: 600px) {
         }
 
         i {
-            font-size: 1.65rem;
+            font-size: .825rem;
         }
     }
 
 
     // Info button content
     .app_information_button_container {
-        top: 1.65%;
-        right: 10.5%;
-        width: 2.65rem;
-        height: 2.65rem;
+        top: .75%;
+        right: 9.5%;
+        width: 1.35rem;
+        height: 1.35rem;
 
         &:hover {
             background-color: var(--dark-mode-container-bg-color);
@@ -2446,34 +2508,48 @@ screen and (min-width: 250px) and (max-width: 650px) and (min-height: 600px) {
         }
 
         i {
-            font-size: 1.65rem;
+            font-size: .775rem;
         }
     }
 
 
     // Info text content
     .app_info_text_container {
-        left: 50%;
-        top: 8.5%;
+        left: 52%;
+        top: 6.5%;
         width: 46%;
-        height: 35%;
-        margin: 0;
-        padding: .7rem 1.5rem;
-        gap: .55rem;
+        height: 42.25%;
+        padding: .65;
+        gap: .25rem;
 
         i {
-            font-size: 1.65rem;
-            padding-bottom: .75rem;
+            font-size: 1.25rem;
+            padding-bottom: .2rem;
         }
 
         p {
-            font-size: 1.2rem;
-            text-indent: .75rem;
-            line-height: 1.25rem;
+            font-size: .8rem;
+            text-indent: .5rem;
+            line-height: 1.05rem;
         }
 
         span {
-            font-size: 1.1rem;
+            font-size: .725rem;
+            line-height: .875rem;
+        }
+
+        .app_info_text_container_close {
+            width: 1.5rem;
+            height: 1.5rem;
+            top: 1.5%;
+            right: 2%;
+
+            i {
+                font-size: .9rem;
+            }
         }
     }
 }
+
+
+// TODO: make breakpoint for height < 800 and any width (?) with style similar to original one but graph has less width and form occupies less height.
