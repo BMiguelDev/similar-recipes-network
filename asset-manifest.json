@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/similar-recipes-network/static/css/main.c726cf1f.css",
-    "main.js": "/similar-recipes-network/static/js/main.62d0a260.js",
+    "main.css": "/similar-recipes-network/static/css/main.01d6e695.css",
+    "main.js": "/similar-recipes-network/static/js/main.1bd8420f.js",
     "index.html": "/similar-recipes-network/index.html",
-    "main.c726cf1f.css.map": "/similar-recipes-network/static/css/main.c726cf1f.css.map",
-    "main.62d0a260.js.map": "/similar-recipes-network/static/js/main.62d0a260.js.map"
+    "main.01d6e695.css.map": "/similar-recipes-network/static/css/main.01d6e695.css.map",
+    "main.1bd8420f.js.map": "/similar-recipes-network/static/js/main.1bd8420f.js.map"
   },
   "entrypoints": [
-    "static/css/main.c726cf1f.css",
-    "static/js/main.62d0a260.js"
+    "static/css/main.01d6e695.css",
+    "static/js/main.1bd8420f.js"
   ]
 }
