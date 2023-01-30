@@ -584,18 +584,18 @@ body {
                 border: .15rem solid var(--recipe-clicked-button-border-color);
                 color: var(--recipe-clicked-button-color);
                 padding: 0 .5rem;
-                font-size: .65rem;
+                font-size: .625rem;
                 cursor: pointer;
                 //width: 100%;
                 min-width: 75%;
                 max-width: 90%;
                 align-self: center;
-                height: 17.5%;
+                height: 18%;
                 transition: all .2s ease-in-out;
                 font-family: 'Roboto', sans-serif;
-                line-height: .95rem;
+                line-height: .775rem;
                 border-radius: .5rem;
-                letter-spacing: 0.075rem;
+                letter-spacing: 0.055rem;
                 text-transform: uppercase;
                 //overflow-y: hidden;
 
@@ -620,7 +620,7 @@ body {
                 align-items: center;
                 justify-content: center;
                 gap: 5%;
-                height: 78.5%;
+                height: 78%;
 
                 a {
                     max-height: 75%;
