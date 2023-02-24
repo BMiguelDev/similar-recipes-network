@@ -40,6 +40,7 @@ class App extends Component {
             isLoading: false,
             isGraphLoading: false,
             nodeClicked: null,
+            isNodeImageLoaded: false,
             previousNodeClickedId: "",
             graphJson: null,
             isGraphBuilt: false,
@@ -206,9 +207,9 @@ class App extends Component {
 
     handleGraphNodeClick(event, item) {
         const [currentItem, currentId] = event === null ? [item, item.id] : [event.data.node, event.data.node.id];
-
         if (currentId === this.state.previousNodeClickedId) return;
-        this.setState({ searchNameWasSubmitted: false, previouslySearchedName: "", previouslySelectedCategory: { value: '', label: '' }, nodeClicked: currentItem, previousNodeClickedId: currentId });
+
+        this.setState({ searchNameWasSubmitted: false, previouslySearchedName: "", previouslySelectedCategory: { value: '', label: '' }, nodeClicked: currentItem, previousNodeClickedId: currentId, isNodeImageLoaded: false });
     }
 
     parseRecipeTitleString(titleString) {
@@ -451,7 +452,16 @@ class App extends Component {
                                 <img
                                     src={recipeImage}
                                     alt="Recipe"
+                                    style={this.state.isNodeImageLoaded ? {} : { display: 'none' }}
+                                    onLoad={() => this.setState({ isNodeImageLoaded: true })
+                                    }
                                 />
+                                {this.state.isNodeImageLoaded ? null :
+                                    <Row className="loading_row">
+                                        <i className="fas fa-spinner fa-spin"></i>
+                                        <p>Loading</p>
+                                    </Row>
+                                }
                             </a>
                             <div className="recipe_characteristics_container">
                                 <Tooltip title={<span className='tooltip_container'>Preparation</span>}/*"Preparation"*/ placement="left">
