@@ -424,7 +424,9 @@ class App extends Component {
                 }
             }
         }
-        this.handleGraphNodeClick(null, item);       //Show Recipe on side bar
+
+        item.title=this.parseRecipeTitleString(item.title);  // Parse item title before showing info on side bar
+        this.handleGraphNodeClick(null, item);       // Show Recipe on side bar
         this.setState({ isLoading: false, isGraphLoading: true, graphJson: myGraph, isGraphBuilt: true, recipeIdPreviousGraphBuilt: item.id });
     }
 
@@ -540,8 +542,9 @@ class App extends Component {
     }
 
     // TODO: 
-    // - Fix responsiveness for small screens (near 350 height/width) and for other remaining breakpoints)
+    // - Check responsiveness on all breakpoints
     // - split app component into several smaller components
+    // - make header and footer components css media breakpoint values higher (to make content smaller on normal portrait screens)
 
     render() {
         const mealType = [
