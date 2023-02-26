@@ -602,6 +602,7 @@ body {
                     //height: 75%;
                     text-align: center;
                     position: relative;
+                    text-decoration: none;
 
                     img {
                         max-height: 100%;
@@ -609,6 +610,24 @@ body {
                         position: relative;
                         opacity: 1;
                         transition: all .2s ease-in-out;
+                    }
+
+                    .loading_row {
+                        //padding: 2rem 0rem;
+                        padding: 20% 0rem;
+                        margin-top: 0rem;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        gap: .5rem;
+                        width: 100%;
+            
+                        i,
+                        p {
+                            font-size: .9rem;
+                            color: var(--header-color);
+                            transition: all .2s ease-in-out;
+                        }
                     }
 
                     &::before {

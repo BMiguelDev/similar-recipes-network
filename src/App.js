@@ -428,9 +428,6 @@ class App extends Component {
     }
 
 
-    // TODO: 
-    // - make header and footer components css media breakpoint values higher (to make content smaller on normal portrait screens)
-
     render() {
         const mealType = [
             { value: 'any', label: 'Any' },

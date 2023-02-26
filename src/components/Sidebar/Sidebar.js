@@ -37,7 +37,6 @@ export default class Sidebar extends Component {
                                     src={recipeImage}
                                     alt="Recipe"
                                     style={this.props.isNodeImageLoaded ? {} : { display: 'none' }}
-                                    // onLoad={() => this.setState({ isNodeImageLoaded: true })}
                                     onLoad={() => this.props.changeIsNodeImageLoaded(true)}
                                 />
                                 {this.props.isNodeImageLoaded ? null :

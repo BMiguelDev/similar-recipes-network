@@ -7,11 +7,13 @@ screen and (min-width: 500px) and (max-width: 550px) and (min-height: 500px) and
     footer {
         padding: .15rem .5rem;
         height: 3.5%;
+        line-height: .55rem;
+        gap: .25rem;
 
         .footer_api_description {
 
             p {
-                font-size: .575rem;
+                font-size: .525rem;
                 letter-spacing: .025rem;
             }
         }
@@ -20,7 +22,7 @@ screen and (min-width: 500px) and (max-width: 550px) and (min-height: 500px) and
             gap: .25rem;
 
             .footer_text {
-                font-size: .575rem;
+                font-size: .525rem;
                 letter-spacing: .02rem;
             }
 
@@ -30,7 +32,7 @@ screen and (min-width: 500px) and (max-width: 550px) and (min-height: 500px) and
                 a {
 
                     i {
-                        font-size: .725rem;
+                        font-size: .7rem;
                         padding: .25rem;
 
                         &:hover {
@@ -43,7 +45,7 @@ screen and (min-width: 500px) and (max-width: 550px) and (min-height: 500px) and
                 a:nth-of-type(1),
                 a:nth-of-type(2) {
                     i {
-                        font-size: .625rem;
+                        font-size: .6rem;
                     }
                 }
             }
@@ -123,7 +125,7 @@ screen and (min-height: 550px) and (max-height: 650px) and (min-width: 650px) {
         .footer_api_description {
 
             p {
-                font-size: .55rem;
+                font-size: .5rem;
             }
         }
 
@@ -131,7 +133,7 @@ screen and (min-height: 550px) and (max-height: 650px) and (min-width: 650px) {
             gap: .75rem;
 
             .footer_text {
-                font-size: .55rem;
+                font-size: .5rem;
                 text-align: center;
                 letter-spacing: .025rem;
             }
@@ -142,7 +144,7 @@ screen and (min-height: 550px) and (max-height: 650px) and (min-width: 650px) {
                 a {
 
                     i {
-                        font-size: .7rem;
+                        font-size: .615rem;
                         padding: .15rem .2rem;
 
                         &:hover {
@@ -155,7 +157,7 @@ screen and (min-height: 550px) and (max-height: 650px) and (min-width: 650px) {
                 a:nth-of-type(1),
                 a:nth-of-type(2) {
                     i {
-                        font-size: .575rem;
+                        font-size: .515rem;
                     }
                 }
             }
@@ -178,7 +180,7 @@ screen and (min-height: 250px) and (max-height: 300px) and (min-width: 500px) {
         .footer_api_description {
 
             p {
-                font-size: .45rem;
+                font-size: .415rem;
             }
         }
 
@@ -186,7 +188,7 @@ screen and (min-height: 250px) and (max-height: 300px) and (min-width: 500px) {
             gap: .5rem;
 
             .footer_text {
-                font-size: .45rem;
+                font-size: .415rem;
                 text-align: center;
                 letter-spacing: .02rem;
             }
@@ -197,7 +199,7 @@ screen and (min-height: 250px) and (max-height: 300px) and (min-width: 500px) {
                 a {
 
                     i {
-                        font-size: .5rem;
+                        font-size: .475rem;
                         padding: 0rem .1rem;
 
                         &:hover {
@@ -210,7 +212,7 @@ screen and (min-height: 250px) and (max-height: 300px) and (min-width: 500px) {
                 a:nth-of-type(1),
                 a:nth-of-type(2) {
                     i {
-                        font-size: .415rem;
+                        font-size: .375rem;
                     }
                 }
             }

@@ -7,8 +7,8 @@ screen and (min-width: 500px) and (max-width: 550px) and (min-height: 500px) and
     .dark_mode_container {
         top: .75%;
         right: 2%;
-        width: 1.25rem;
-        height: 1.25rem;
+        width: 1.1rem;
+        height: 1.1rem;
 
         &:hover {
             background-color: var(--dark-mode-container-bg-color);
@@ -19,7 +19,7 @@ screen and (min-width: 500px) and (max-width: 550px) and (min-height: 500px) and
         }
 
         i {
-            font-size: .8rem;
+            font-size: .685rem;
         }
     }
 }
@@ -61,8 +61,8 @@ screen and (min-height: 550px) and (max-height: 650px) and (min-width: 650px) {
     .dark_mode_container {
         top: .75%;
         right: .5%;
-        width: 1rem;
-        height: 1rem;
+        width: .925rem;
+        height: .925rem;
 
         &:hover {
             background-color: var(--dark-mode-container-bg-color);
@@ -73,7 +73,7 @@ screen and (min-height: 550px) and (max-height: 650px) and (min-width: 650px) {
         }
 
         i {
-            font-size: .65rem;
+            font-size: .615rem;
         }
     }
 }
@@ -88,8 +88,8 @@ screen and (min-height: 250px) and (max-height: 300px) and (min-width: 500px) {
     .dark_mode_container {
         top: .75%;
         right: .5%;
-        width: .75rem;
-        height: .75rem;
+        width: .725rem;
+        height: .725rem;
         padding: 0;
 
         &:hover {
@@ -101,7 +101,7 @@ screen and (min-height: 250px) and (max-height: 300px) and (min-width: 500px) {
         }
 
         i {
-            font-size: .475rem;
+            font-size: .45rem;
         }
     }
 }
