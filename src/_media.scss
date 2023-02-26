@@ -29,31 +29,9 @@ screen and (max-height: 350px) and (max-width: 350px) {
 
 
 // Media queries for mobile content (portrait)
-//@media screen and (min-width: 351px) and (max-width: 500px) and (min-height: 500px),
 @media screen and (min-width: 250px) and (max-width: 650px) and (min-height: 950px),
-//screen and (min-width: 300px) and (max-width: 500px) and (min-height: 550px),
-//screen and (min-width: 500px) and (max-width: 650px) and (min-height: 650px)
-//screen and (min-width: 500px) and (max-width: 650px) and (min-height: 550px) 
 screen and (min-width: 300px) and (max-width: 650px) and (min-height: 550px),
 screen and (min-width: 500px) and (max-width: 550px) and (min-height: 500px) and (max-height: 550px) {
-
-    // Header content
-    .header {
-        justify-content: flex-start;
-        padding-left: 1rem;
-        height: 4.5%;
-        gap: .65rem;
-
-        h3 {
-            font-size: 1rem;
-        }
-
-        i {
-            //padding-top: .2rem;
-            font-size: 1.05rem;
-        }
-    }
-
 
     // Main content
     .main_container {
@@ -389,97 +367,6 @@ screen and (min-width: 500px) and (max-width: 550px) and (min-height: 500px) and
     }
 
 
-    // Footer content
-    footer {
-        padding: .15rem .5rem;
-        height: 3.5%;
-
-        .footer_api_description {
-
-            p {
-                font-size: .575rem;
-                letter-spacing: .025rem;
-            }
-        }
-
-        .footer_info {
-            gap: .25rem;
-
-            .footer_text {
-                font-size: .575rem;
-                //text-align: center;
-                letter-spacing: .02rem;
-            }
-
-            .footer_icon_container {
-                gap: .2rem;
-
-                a {
-
-                    i {
-                        font-size: .725rem;
-                        padding: .25rem;
-
-                        &:hover {
-                            color: var(--footer-color);
-                            background-color: inherit;
-                        }
-                    }
-                }
-
-                a:nth-of-type(1),
-                a:nth-of-type(2) {
-                    i {
-                        font-size: .625rem;
-                    }
-                }
-            }
-        }
-    }
-
-
-    // Dark mode content
-    .dark_mode_container {
-        top: .75%;
-        right: 2%;
-        width: 1.25rem;
-        height: 1.25rem;
-
-        &:hover {
-            background-color: var(--dark-mode-container-bg-color);
-
-            i {
-                color: var(--dark-mode-icon-color);
-            }
-        }
-
-        i {
-            font-size: .8rem;
-        }
-    }
-
-
-    // Info button content
-    .app_information_button_container {
-        top: .75%;
-        right: 9.5%;
-        width: 1.25rem;
-        height: 1.25rem;
-
-        &:hover {
-            background-color: var(--dark-mode-container-bg-color);
-
-            i {
-                color: var(--dark-mode-icon-color);
-            }
-        }
-
-        i {
-            font-size: .75rem;
-        }
-    }
-
-
     // Info text content
     .app_info_text_container {
         left: 52%;
@@ -520,28 +407,9 @@ screen and (min-width: 500px) and (max-width: 550px) and (min-height: 500px) and
 
 
 // Media queries for small mobile content (portrait)
-//@media screen and (min-width: 250px) and (max-width: 500px) and (min-height: 350px) and (max-height: 550px),
 @media screen and (min-width: 250px) and (max-width: 400px) and (min-height: 350px) and (max-height: 400px), 
 screen and (min-width: 250px) and (max-width: 500px) and (min-height: 400px) and (max-height: 550px), 
 screen and (min-width: 250px) and (max-width: 300px) and (min-height: 350px) and (max-height: 950px) {
-
-    // Header content
-    .header {
-        justify-content: flex-start;
-        padding-left: .5rem;
-        height: 5%;
-        gap: .4rem;
-
-        h3 {
-            font-size: .675rem;
-        }
-
-        i {
-            //padding-top: 0;
-            font-size: .675rem;
-        }
-    }
-
 
     // Main content
     .main_container {
@@ -723,7 +591,6 @@ screen and (min-width: 250px) and (max-width: 300px) and (min-height: 350px) and
                                 }
 
                                 &>div:nth-of-type(2) {
-                                    //margin-top: .02rem;
                                     margin-bottom: .05rem;
                                     //padding: .05rem 0;
 
@@ -933,99 +800,6 @@ screen and (min-width: 250px) and (max-width: 300px) and (min-height: 350px) and
     }
 
 
-    // Footer content
-    footer {
-        padding: .15rem .15rem;
-        gap: .5%;
-        height: 5%;
-
-        .footer_api_description {
-
-            p {
-                font-size: .425rem;
-                letter-spacing: .025rem;
-                line-height: .45rem;
-            }
-        }
-
-        .footer_info {
-            gap: .1rem;
-
-            .footer_text {
-                font-size: .425rem;
-                letter-spacing: .015rem;
-                line-height: .45rem;
-            }
-
-            .footer_icon_container {
-                gap: .2rem;
-
-                a {
-
-                    i {
-                        font-size: .55rem;
-                        padding: .15rem;
-
-                        &:hover {
-                            color: var(--footer-color);
-                            background-color: inherit;
-                        }
-                    }
-                }
-
-                a:nth-of-type(1),
-                a:nth-of-type(2) {
-                    i {
-                        font-size: .45rem;
-                    }
-                }
-            }
-        }
-    }
-
-
-    // Dark mode content
-    .dark_mode_container {
-        top: .75%;
-        right: 1%;
-        width: .75rem;
-        height: .75rem;
-
-        &:hover {
-            background-color: var(--dark-mode-container-bg-color);
-
-            i {
-                color: var(--dark-mode-icon-color);
-            }
-        }
-
-        i {
-            font-size: .515rem;
-        }
-    }
-
-
-    // Info button content
-    .app_information_button_container {
-        top: .75%;
-        right: 8.5%;
-        width: .75rem;
-        height: .75rem;
-
-        &:hover {
-            background-color: var(--dark-mode-container-bg-color);
-
-            i {
-                color: var(--dark-mode-icon-color);
-            }
-        }
-
-        i {
-            font-size: .515rem;
-        }
-    }
-
-
     // Info text content
     .app_info_text_container {
         left: 51.5%;
@@ -1071,27 +845,9 @@ screen and (min-width: 250px) and (max-width: 300px) and (min-height: 350px) and
 
 
 // Media queries for mobile content (landscape)
-//@media screen and (min-height: 300px) and (max-height: 650px) and (min-width: 501px) 
 @media screen and (min-height: 300px) and (max-height: 500px) and (min-width: 501px),
 screen and (min-height: 500px) and (max-height: 550px) and (min-width: 550px), 
 screen and (min-height: 550px) and (max-height: 650px) and (min-width: 650px) {
-
-    // Header content
-    .header {
-        justify-content: center;
-        height: 6%;
-        gap: .5rem;
-
-        h3 {
-            font-size: .775rem;
-        }
-
-        i {
-            padding-top: .1rem;
-            font-size: .8rem;
-        }
-    }
-
 
     // Main content
     .main_container {
@@ -1173,9 +929,7 @@ screen and (min-height: 550px) and (max-height: 650px) and (min-width: 650px) {
                 }
 
                 .options_filter {
-                    //padding: .2rem 0;
                     //padding-bottom: .25rem;
-                    //width: 90%;
 
                     .number_of_games_slider_container {
                         padding-bottom: .65rem;
@@ -1219,7 +973,6 @@ screen and (min-height: 550px) and (max-height: 650px) and (min-width: 650px) {
                                 }
 
                                 &>div:nth-of-type(2) {
-                                    //margin-top: .02rem;
                                     margin-bottom: .1rem;
                                     //padding: .05rem 0;
 
@@ -1240,7 +993,6 @@ screen and (min-height: 550px) and (max-height: 650px) and (min-width: 650px) {
                 }
 
                 .recipe_search_input_container {
-                    //width: 90%;
 
                     label {
                         font-size: .725rem;
@@ -1255,7 +1007,6 @@ screen and (min-height: 550px) and (max-height: 650px) and (min-width: 650px) {
                 }
 
                 .recipe_search_button_container {
-                    //width: 90%;
                     //margin-top: .6rem;
 
                     .recipe_search_button {
@@ -1421,98 +1172,6 @@ screen and (min-height: 550px) and (max-height: 650px) and (min-width: 650px) {
     }
 
 
-    // Footer content
-    footer {
-        width: 100%;
-        height: 5%;
-        padding: .1rem 1rem;
-        //gap: 5rem;
-
-        .footer_api_description {
-
-            p {
-                font-size: .55rem;
-            }
-        }
-
-        .footer_info {
-            gap: .75rem;
-
-            .footer_text {
-                font-size: .55rem;
-                text-align: center;
-                letter-spacing: .025rem;
-            }
-
-            .footer_icon_container {
-                gap: .45rem;
-
-                a {
-
-                    i {
-                        font-size: .7rem;
-                        padding: .15rem .2rem;
-
-                        &:hover {
-                            color: var(--footer-color);
-                            background-color: inherit;
-                        }
-                    }
-                }
-
-                a:nth-of-type(1),
-                a:nth-of-type(2) {
-                    i {
-                        font-size: .575rem;
-                    }
-                }
-            }
-        }
-    }
-
-
-    // Dark mode content
-    .dark_mode_container {
-        top: .75%;
-        right: .5%;
-        width: 1rem;
-        height: 1rem;
-
-        &:hover {
-            background-color: var(--dark-mode-container-bg-color);
-
-            i {
-                color: var(--dark-mode-icon-color);
-            }
-        }
-
-        i {
-            font-size: .65rem;
-        }
-    }
-
-
-    // Info button content
-    .app_information_button_container {
-        top: .75%;
-        right: 5%;
-        width: 1rem;
-        height: 1rem;
-
-        &:hover {
-            background-color: var(--dark-mode-container-bg-color);
-
-            i {
-                color: var(--dark-mode-icon-color);
-            }
-        }
-
-        i {
-            font-size: .625rem;
-        }
-    }
-
-
     // Info text content
     .app_info_text_container {
         left: 30.7%;
@@ -1555,23 +1214,6 @@ screen and (min-height: 550px) and (max-height: 650px) and (min-width: 650px) {
 @media screen and (min-height: 250px) and (max-height: 350px) and (min-width: 350px) and (max-width: 500px),
 screen and (min-height: 350px) and (max-height: 400px) and (min-width: 400px) and (max-width: 500px),
 screen and (min-height: 250px) and (max-height: 300px) and (min-width: 500px) {
-
-    // Header content
-    .header {
-        justify-content: center;
-        height: 6%;
-        gap: .5rem;
-
-        h3 {
-            font-size: .65rem;
-        }
-
-        i {
-            padding-top: .1rem;
-            font-size: .675rem;
-        }
-    }
-
 
     // Main content
     .main_container {
@@ -1666,7 +1308,6 @@ screen and (min-height: 250px) and (max-height: 300px) and (min-width: 500px) {
                 }
 
                 .options_filter {
-                    //padding: .2rem 0;
                     //padding-bottom: .25rem;
 
                     .number_of_games_slider_container {
@@ -1747,7 +1388,6 @@ screen and (min-height: 250px) and (max-height: 300px) and (min-width: 500px) {
                                 }
 
                                 &>div:nth-of-type(2) {
-                                    //margin-top: .02rem;
                                     margin-bottom: .05rem;
                                     //padding: .05rem 0;
 
@@ -1951,99 +1591,6 @@ screen and (min-height: 250px) and (max-height: 300px) and (min-width: 500px) {
     }
 
 
-    // Footer content
-    footer {
-        width: 100%;
-        height: 5%;
-        padding: .1rem .5rem;
-        //gap: 5rem;
-
-        .footer_api_description {
-
-            p {
-                font-size: .45rem;
-            }
-        }
-
-        .footer_info {
-            gap: .5rem;
-
-            .footer_text {
-                font-size: .45rem;
-                text-align: center;
-                letter-spacing: .02rem;
-            }
-
-            .footer_icon_container {
-                gap: .25rem;
-
-                a {
-
-                    i {
-                        font-size: .5rem;
-                        padding: 0rem .1rem;
-
-                        &:hover {
-                            color: var(--footer-color);
-                            background-color: inherit;
-                        }
-                    }
-                }
-
-                a:nth-of-type(1),
-                a:nth-of-type(2) {
-                    i {
-                        font-size: .415rem;
-                    }
-                }
-            }
-        }
-    }
-
-
-    // Dark mode content
-    .dark_mode_container {
-        top: .75%;
-        right: .5%;
-        width: .75rem;
-        height: .75rem;
-        padding: 0;
-
-        &:hover {
-            background-color: var(--dark-mode-container-bg-color);
-
-            i {
-                color: var(--dark-mode-icon-color);
-            }
-        }
-
-        i {
-            font-size: .475rem;
-        }
-    }
-
-
-    // Info button content
-    .app_information_button_container {
-        top: .75%;
-        right: 5%;
-        width: .75rem;
-        height: .75rem;
-
-        &:hover {
-            background-color: var(--dark-mode-container-bg-color);
-
-            i {
-                color: var(--dark-mode-icon-color);
-            }
-        }
-
-        i {
-            font-size: .475rem;
-        }
-    }
-
-
     // Info text content
     .app_info_text_container {
         left: 33.5%;
@@ -2091,24 +1638,6 @@ screen and (min-height: 250px) and (max-height: 300px) and (min-width: 500px) {
 // Media queries for tablet content (portrait)
 @media screen and (min-height: 650px) and (min-width: 650px) and (max-width: 800px),
 screen and (min-height: 900px) and (min-width: 650px) and (max-width: 900px) {
-
-    // Header content
-    .header {
-        justify-content: center;
-        //padding-left: 1rem;
-        height: 5%;
-        gap: .65rem;
-
-        h3 {
-            font-size: 1rem;
-        }
-
-        i {
-            //padding-top: .2rem;
-            font-size: 1rem;
-        }
-    }
-
 
     // Main content
     .main_container {
@@ -2239,7 +1768,6 @@ screen and (min-height: 900px) and (min-width: 650px) and (max-width: 900px) {
                                 }
 
                                 &>div:nth-of-type(2) {
-                                    //margin-top: .02rem;
                                     margin-bottom: .1rem;
                                     //padding: .05rem 0;
 
@@ -2287,7 +1815,6 @@ screen and (min-height: 900px) and (min-width: 650px) and (max-width: 900px) {
                 width: 48.5%;
                 height: 100%;
                 margin-top: 0;
-                //padding-right: 1rem;
                 gap: .65rem;
 
                 i,
@@ -2356,7 +1883,6 @@ screen and (min-height: 900px) and (min-width: 650px) and (max-width: 900px) {
                 }
 
                 .recipe_information_charecteristics_container {
-                    //gap: 5%;
                     gap: unset;
                     justify-content: space-around;
                     height: 82%;
@@ -2440,97 +1966,6 @@ screen and (min-height: 900px) and (min-width: 650px) and (max-width: 900px) {
     }
 
 
-    // Footer content
-    footer {
-        padding: .15rem .5rem;
-        height: 3.5%;
-
-        .footer_api_description {
-
-            p {
-                font-size: .575rem;
-                letter-spacing: .025rem;
-            }
-        }
-
-        .footer_info {
-            gap: .25rem;
-
-            .footer_text {
-                font-size: .575rem;
-                //text-align: center;
-                letter-spacing: .02rem;
-            }
-
-            .footer_icon_container {
-                gap: .2rem;
-
-                a {
-
-                    i {
-                        font-size: .725rem;
-                        padding: .25rem;
-
-                        &:hover {
-                            color: var(--footer-color);
-                            background-color: inherit;
-                        }
-                    }
-                }
-
-                a:nth-of-type(1),
-                a:nth-of-type(2) {
-                    i {
-                        font-size: .625rem;
-                    }
-                }
-            }
-        }
-    }
-
-
-    // Dark mode content
-    .dark_mode_container {
-        top: .75%;
-        right: 2%;
-        width: 1.35rem;
-        height: 1.35rem;
-
-        &:hover {
-            background-color: var(--dark-mode-container-bg-color);
-
-            i {
-                color: var(--dark-mode-icon-color);
-            }
-        }
-
-        i {
-            font-size: .825rem;
-        }
-    }
-
-
-    // Info button content
-    .app_information_button_container {
-        top: .75%;
-        right: 9.5%;
-        width: 1.35rem;
-        height: 1.35rem;
-
-        &:hover {
-            background-color: var(--dark-mode-container-bg-color);
-
-            i {
-                color: var(--dark-mode-icon-color);
-            }
-        }
-
-        i {
-            font-size: .775rem;
-        }
-    }
-
-
     // Info text content
     .app_info_text_container {
         left: 52%;
@@ -2577,95 +2012,46 @@ screen and (min-height: 900px) and (min-width: 900px) and (max-width: 1200px) {
 
     // Main content
     .main_container {
-        // display: flex;
-        // align-items: center;
-        // justify-content: center;
         padding: .75% 2%;
         height: 87%;
-        // gap: 3%;
 
         // Side bar content
         .sidebar_content {
-            // height: 100%;
-            // flex: 1;
-            // display: flex;
-            // flex-direction: column;
-            // align-items: center;
-            // justify-content: flex-start;
-            // gap: 2.5%;
 
             .sidebar_form {
-                // height: 57.5%;
-                // display: flex;
-                // flex-direction: column;
                 gap: 4%;
-                // width: 100%;
 
                 .sidebar_form_radio_container {
-                    // display: flex;
-                    // flex-direction: column;
                     gap: .3rem;
-                    // position: relative;
 
                     label {
-                        // display: flex;
-                        // align-items: center;
 
                         button {
-                            // padding: 0;
                             margin-left: .1rem;
-                            // width: 20%;
-                            // min-width: 20%;
 
                             span:first-child {
-                                // color: var(--graph-layout-info-button-color);
                                 transform: scale(.65);
-                                // transition: all .2s ease-in-out;
                             }
                         }
                     }
 
                     .graph_layout_info {
-                        // position: absolute;
-                        // right: 0%;
-                        // top: 0%;
-                        // display: none;
-                        // background-color: transparent;
                         font-size: .575rem;
-                        // width: 30%;
-                        // text-align: center;
-                        // color: var(--graph-layout-info-text-color);
                         padding: .1rem;
                         line-height: .6rem;
-                        // border-radius: .5rem;
-                        // background-color: var(--graph-layout-info-text-bg-color);
-                        // margin: 0;
-                        // transition: all .2s ease-in-out;
-
                     }
 
                     .graph_layout_radio_select {
-                        // display: flex;
                         flex-direction: row;
-                        //align-items: flex-start;
                         align-items: center;
-                        //justify-content: center;
                         justify-content: space-around;
-                        //justify-content: flex-start;
-                        //gap: 5%;
-                        //padding-bottom: .4rem;
 
                         .form_lab {
-                            // margin: 0;
-                            // text-align: left;
                             width: 40%;
 
                             &>span:nth-of-type(1) {
-                                // padding: .1rem .15rem;
 
                                 span {
-                                    // color: var(--sidebar-secondary-color);
-                                    // transition: all .2s ease-in-out;
 
                                     div {
                                         transform: scale(.75);
@@ -2675,11 +2061,8 @@ screen and (min-height: 900px) and (min-width: 900px) and (max-width: 1200px) {
 
                             &>span:nth-of-type(2) {
                                 font-size: 0.7rem;
-                                // font-weight: 600;
                                 text-indent: 0rem;
                                 line-height: .8rem;
-                                // color: var(--graph-layout-radio-text-color);
-                                // transition: all .2s ease-in-out;
                             }
                         }
                     }
@@ -2710,73 +2093,26 @@ screen and (min-height: 900px) and (min-width: 900px) and (max-width: 1200px) {
                     .genres_select_input_container {
 
                         label {
-                            // color: var(--sidebar-label-color);
-                            // cursor: pointer;
-                            // transition: all .2s ease-in-out;
 
                             &>div {
-                                // margin-top: .25rem;
 
                                 &>div:nth-of-type(1) {
-                                    // background-color: var(--select-input-container-bg-color);
-                                    // font-size: .9rem;
-                                    // letter-spacing: .02rem;
-                                    // min-height: 24px;
-                                    // transition: all .2s ease-in-out;
 
                                     &>div:nth-of-type(1) {
-                                        // cursor: text;
 
                                         &>div:not(#react-select-6-placeholder) {
-                                            // color: var(--header-color);
-                                            // transition: all .2s ease-in-out;
                                             margin: .05rem;
                                         }
                                     }
-
-                                    // &>div:nth-of-type(2) {
-                                    //     cursor: pointer;
-
-                                    //     span {
-                                    //         margin: 5px 0;
-                                    //     }
-
-                                    //     div {
-                                    //         padding: 0 .25rem;
-                                    //     }
-                                    // }
                                 }
 
                                 &>div:nth-of-type(2) {
-                                    // margin-top: .02rem;
-                                    // padding: .05rem 0;
-                                    // background-color: var(--select-input-options-bg-color);
 
                                     &>div {
                                         max-height: 13.5vh;
-                                        // padding: .1rem 0;
 
                                         &>div {
-                                            // cursor: pointer;
                                             padding: .4rem .75rem;
-                                            // border-bottom: .05rem solid var(--input-option-area-border-color);
-                                            // font-size: .875rem;
-                                            // letter-spacing: .01rem;
-                                            // background-color: transparent;
-                                            // color: var(--select-input-options-color);
-                                            // transition: none;
-
-                                            // &.css-tr4s17-option {
-                                            //     background-color: var(--header-bg-color);
-                                            // }
-
-                                            // &:not(.css-tr4s17-option):not(.css-1wlit7h-NoOptionsMessage):hover {
-                                            //     background-color: var(--select-input-hover-bg-color);
-                                            // }
-
-                                            // &.css-1wlit7h-NoOptionsMessage {
-                                            //     cursor: initial;
-                                            // }
                                         }
 
                                     }
@@ -2787,230 +2123,64 @@ screen and (min-height: 900px) and (min-width: 900px) and (max-width: 1200px) {
                 }
 
                 .recipe_search_input_container {
-                    //width: 90%;
-                    //height: 18%;
 
                     label {
-                        // color: var(--sidebar-label-color);
-                        // font-size: 1rem;
-                        // transition: all .2s ease-in-out;
 
                         .recipe_search_input {
-                            // width: 100%;
-                            // border: .01rem solid var(--recipe-search-input-border-color);
-                            // background-color: var(--recipe-search-input-bg-color);
                             padding: .4rem;
                             padding-bottom: .2rem;
-                            // margin-top: .25rem;
-                            // border-bottom: .1rem solid var(--recipe-search-input-border-color);
-                            // border-top-left-radius: .5rem;
-                            // border-top-right-radius: .5rem;
-                            // color: var(--header-color);
-                            // transition: all .2s ease-in-out, outline 0s ease-in-out, border 0s ease-in-out;
-
-                            // &:hover {
-                            //     border-color: var(--recipe-search-input-border-hover-color);
-                            // }
-
-                            // &:focus-visible {
-                            //     border-color: transparent;
-                            //     outline: .1rem solid var(--header-bg-color);
-                            // }
                         }
                     }
                 }
 
                 .recipe_search_button_container {
-                    //width: 90%;
-                    //margin-top: .55rem;
-                    //height: 10%;
-                    // display: flex;
-                    // align-items: center;
-                    // justify-content: center;
-                    // position: relative;
 
                     .recipe_search_button {
-                        // width: 70%;
-                        // min-width: 20%;
-                        // background-color: var(--recipe-search-button-bg-color);
-                        // color: var(--recipe-search-button-color);
-                        // position: relative;
-                        // font-size: .825rem;
                         padding: .1rem 0rem;
-                        // transition: all .2s ease-in-out;
                     }
                 }
             }
 
             .recipe_title_search_results {
-                // width: 100%;
-                // height: 40%;
-                //overflow-y: scroll;
                 overflow-y: auto;
-                //overflow: visible;
 
                 ul {
-                    // margin: 0;
-                    // padding-left: 0;
                     max-width: 90%;
                     margin: 0 auto;
 
                     li {
-                        // cursor: pointer;
                         font-size: .675rem;
                         line-height: .725rem;
-                        // font-weight: 700;
-                        // color: var(--recipe-search-results-color);
                         margin: .25rem 0;
-                        // background-color: var(--recipe-search-results-bg-color);
                         border: .125rem solid var(--recipe-search-results-border-color);
-                        // border-radius: .5rem;
                         padding: .15rem .25rem;
-                        // transition: all .2s ease-in-out, transform .1s ease-in-out;
-                        // list-style-type: none;
-                        // text-align: center;
-
-                        // &:first-of-type {
-                        //     margin-top: 0;
-                        // }
-
-                        // &:hover {
-                        //     color: var(--recipe-search-results-hover-color);
-                        //     background-color: var(--recipe-search-results-hover-bg-color);
-                        //     border-color: var(--recipe-search-results-hover-border-color);
-                        //     transform: scale(1.1);
-                        // }
                     }
                 }
             }
 
             .recipe_clicked_description {
-                // width: 100%;
-                // display: flex;
-                // flex-direction: column;
-                // height: 40%;
                 gap: 4%;
 
                 button {
-                    // background-color: var(--recipe-clicked-button-bg-color);
                     border: .125rem solid var(--recipe-clicked-button-border-color);
-                    // color: var(--recipe-clicked-button-color);
                     padding: 0 .25rem;
                     font-size: .625rem;
-                    // cursor: pointer;
-                    //width: 100%;
                     min-width: 75%;
                     max-width: 100%;
-                    // align-self: center;
                     height: 18.5%;
-                    // transition: all .2s ease-in-out;
-                    // font-family: 'Roboto', sans-serif;
                     line-height: .75rem;
-                    // border-radius: .5rem;
                     letter-spacing: 0.05rem;
-                    // text-transform: uppercase;
-                    //overflow-y: hidden;
-
-                    // &:hover {
-                    //     background-color: var(--recipe-clicked-button-hover-bg-color);
-                    //     color: var(--recipe-clicked-button-hover-color);
-                    // }
-
-                    // h4 {
-                    //     margin: 0;
-                    //     height: 100%;
-                    //     overflow-y: hidden;
-                    //     display: flex;
-                    //     justify-content: center;
-                    //     align-items: center;
-                    // }
                 }
 
                 .recipe_information_charecteristics_container {
-                    // display: flex;
-                    // flex-direction: column;
-                    // align-items: center;
-                    // justify-content: center;
-                    // gap: 5%;
                     height: 77.5%;
 
-                    // a {
-                    //     max-height: 75%;
-                    //     //height: 75%;
-                    //     text-align: center;
-                    //     position: relative;
-
-                    //     // img {
-                    //     //     max-height: 100%;
-                    //     //     max-width: 100%;
-                    //     //     position: relative;
-                    //     //     opacity: 1;
-                    //     //     transition: all .2s ease-in-out;
-                    //     // }
-
-                    //     // &::before {
-                    //     //     content: 'Check the recipe!';
-                    //     //     position: absolute;
-                    //     //     top: 0;
-                    //     //     left: 0;
-                    //     //     font-size: 1rem;
-                    //     //     font-weight: 700;
-                    //     //     width: 100%;
-                    //     //     height: 100%;
-                    //     //     display: flex;
-                    //     //     align-items: center;
-                    //     //     justify-content: center;
-                    //     //     text-align: center;
-                    //     //     color: var(--recipe-info-img-text-color);
-                    //     //     z-index: 2;
-                    //     //     visibility: hidden;
-                    //     //     opacity: 0;
-                    //     //     transition: all .2s ease-in-out;
-                    //     // }
-
-                    //     // &:hover {
-
-                    //     //     img {
-                    //     //         opacity: .3;
-                    //     //     }
-
-                    //     //     &::before {
-                    //     //         visibility: visible;
-                    //     //         opacity: 1;
-                    //     //     }
-                    //     // }
-                    // }
-
                     .recipe_characteristics_container {
-                        // display: flex;
-                        // justify-content: center;
-                        // align-items: center;
-                        // font-size: .65rem;
-                        // gap: 20%;
-                        // width: 100%;
-                        // transition: all .2s ease-in-out;
-                        // font-weight: 700;
-                        // height: 20%;
 
                         span {
-                            // background-color: var(--recipe-characteristics-bg-color);
-                            // color: var(--recipe-characteristics-color);
-                            // //padding: .5rem;
-                            // display: flex;
-                            // align-items: center;
-                            // justify-content: center;
-                            // border-radius: 3.5rem;
-                            // text-align: center;
                             line-height: .675rem;
                             width: 2.15rem;
                             height: 2.15rem;
-                            // cursor: default;
-                            // transition: all .2s ease-in-out;
-
-                            // &:hover {
-                            //     transform: scale(1.15);
-                            //     background-color: var(--recipe-characteristics-hover-bg-color);
-                            // }
                         }
                     }
                 }
@@ -3019,19 +2189,9 @@ screen and (min-height: 900px) and (min-width: 900px) and (max-width: 1200px) {
 
         //Graph content
         .graph_container {
-            // height: 100%;
-            // padding: .5rem;
-            // border: .1rem solid var(--graph-container-border-color);
-            // border-radius: .5rem;
-            // background-color: var(--graph-container-bg-color);
-            // transition: all .2s ease-in-out;
             flex: 3;
 
             .graph_loading_container {
-                // display: flex;
-                // align-items: center;
-                // justify-content: center;
-                // height: 100%;
 
                 i {
                     font-size: 3.75rem;
@@ -3039,14 +2199,6 @@ screen and (min-height: 900px) and (min-width: 900px) and (max-width: 1200px) {
             }
 
             .empty_graph_container {
-                // display: flex;
-                // flex-direction: column;
-                // align-items: center;
-                // justify-content: center;
-                // gap: 1.5rem;
-                // height: 100%;
-                // color: var(--header-color);
-                // transition: all .2s ease-in-out;
                 padding: 0 7.5%;
 
                 i {
@@ -3054,22 +2206,13 @@ screen and (min-height: 900px) and (min-width: 900px) and (max-width: 1200px) {
                 }
 
                 .empty_graph_container_description {
-                    // display: flex;
-                    // flex-direction: column;
-                    // align-items: center;
-                    // justify-content: center;
                     gap: 1rem;
 
                     h4 {
-                        // margin: 0;
                         font-size: 1.35rem;
-                        // text-align: center;
                     }
 
                     p {
-                        // margin: 0;
-                        // font-size: 1rem;
-                        // text-align: center;
                         line-height: 1.2rem;
                     }
                 }
@@ -3078,132 +2221,20 @@ screen and (min-height: 900px) and (min-width: 900px) and (max-width: 1200px) {
     }
 
 
-    // Dark mode content
-    .dark_mode_container {
-        // position: absolute;
-        // display: flex;
-        // align-items: center;
-        // justify-content: center;
-        top: 1.25%;
-        right: 1%;
-        width: 1.8rem;
-        height: 1.8rem;
-        padding: .3rem;
-        // border-radius: 2rem;
-        // background-color: var(--dark-mode-container-bg-color);
-        // cursor: pointer;
-        // transition: all .2s ease-in-out;
-
-        // &:hover {
-        //     background-color: var(--dark-mode-container-bg-hover-color);
-
-        //     i {
-        //         color: var(--dark-mode-icon-hover-color);
-        //     }
-        // }
-
-        i {
-            // color: var(--dark-mode-icon-color);
-            font-size: 1.15rem;
-        }
-    }
-
-
-    // Info button content
-    .app_information_button_container {
-        // position: absolute;
-        // display: flex;
-        // flex-direction: column;
-        // align-items: center;
-        // justify-content: center;
-        top: 1.25%;
-        right: 6%;
-        width: 1.8rem;
-        height: 1.8rem;
-        padding: .3rem;
-        // border-radius: 2rem;
-        // background-color: var(--dark-mode-container-bg-color);
-        // cursor: pointer;
-        // transition: all .2s ease-in-out;
-
-        // &:hover {
-        //     background-color: var(--dark-mode-container-bg-hover-color);
-
-        //     i {
-        //         color: var(--dark-mode-icon-hover-color);
-        //     }
-        // }
-
-        i {
-            // color: var(--dark-mode-icon-color);
-            font-size: 1.175rem;
-        }
-    }
-
-
     // Info text content
     .app_info_text_container {
-        // position: absolute;
         left: 2%;
         bottom: 6.75%;
         width: 23%;
         height: 33.65%;
-        // margin: 0;
         padding: .35rem;
-        // border-radius: 1rem;
-        // background-color: var(--help-info-text-bg-color);
-        // text-align: start;
-        // display: flex;
-        // flex-direction: column;
-        // align-items: center;
-        // justify-content: center;
-        // transition: all .2s ease-in-out;
-
-        // &.app_info_text_container_visible {
-        //     opacity: 1;
-        //     z-index: 3;
-        //     box-shadow: 0 0 .1rem rgb(216, 241, 255), 0 0 .2rem rgb(216, 236, 255), 0 0 .45rem rgb(205, 233, 255), 0 0 .7rem #00bce6, 0 0 1rem #00bce6, 0 0 1.25rem #006c90, 0 0 1.5rem #005990;
-
-        //     @keyframes checkmark-opacity {
-        //         0% {
-        //             opacity: 0;
-        //         }
-
-        //         100% {
-        //             opacity: 1;
-        //         }
-        //     }
-
-        //     @keyframes checkmark-glow {
-        //         0% {
-        //             box-shadow: 0 0 .1rem rgb(216, 241, 255), 0 0 .2rem rgb(216, 236, 255), 0 0 .45rem rgb(205, 233, 255), 0 0 .7rem #00bce6, 0 0 1rem #00bce6, 0 0 1.25rem #006c90, 0 0 1.5rem #005990;
-        //         }
-
-        //         100% {
-        //             box-shadow: 0 0 .1rem rgb(0, 137, 229), 0 0 .2rem rgb(0, 145, 229), 0 0 .45rem #309bf9, 0 0 .7rem #67a6dd, 0 0 1rem #a7d3ff;
-        //         }
-        //     }
-
-        //     animation: checkmark-glow .5s ease .25s 3 alternate,
-        //     checkmark-opacity .5s ease;
-        //     animation-fill-mode: forwards;
-        // }
-
-        // &.app_info_text_container_hidden {
-        //     opacity: 0;
-        //     z-index: -1;
-        // }
-
+        
         i {
-            // color: var(--help-info-text-icon-color);
             font-size: .8rem;
-            // padding-bottom: .25rem;
         }
 
         p {
-            // margin: 0;
             font-size: .7rem;
-            // color: var(--sidebar-secondary-color);
             text-indent: .5rem;
             line-height: .85rem;
         }
@@ -3212,29 +2243,14 @@ screen and (min-height: 900px) and (min-width: 900px) and (max-width: 1200px) {
             padding-top: .35rem;
             font-size: .7rem;
             line-height: .75rem;
-
-            // color: var(--help-info-text-note-color);
-            // font-weight: 800;
-
-            // span {
-            //     text-decoration: underline;
-            //     font-weight: 900;
-            // }
         }
 
         .app_info_text_container_close {
-            // cursor: pointer;
-            // position: absolute;
-            // display: flex;
-            // align-items: center;
-            // justify-content: center;
             width: 1.1rem;
             height: 1.1rem;
-            //padding: .2rem .5rem;
             padding: .2rem 0 0 .125rem;
             top: .75%;
             right: 1.5%;
-            // border-radius: 2rem;
 
             i {
                 font-size: .8rem;

@@ -1,0 +1,32 @@
+// Info button content
+.app_information_button_container {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    top: 1.25%;
+    right: 6%;
+    width: 2rem;
+    height: 2rem;
+    padding: .4rem;
+    border-radius: 2rem;
+    background-color: var(--dark-mode-container-bg-color);
+    cursor: pointer;
+    transition: all .2s ease-in-out;
+
+    &:hover {
+        background-color: var(--dark-mode-container-bg-hover-color);
+
+        i {
+            color: var(--dark-mode-icon-hover-color);
+        }
+    }
+
+    i {
+        color: var(--dark-mode-icon-color);
+        font-size: 1.275rem;
+    }
+}
+
+@import './media';

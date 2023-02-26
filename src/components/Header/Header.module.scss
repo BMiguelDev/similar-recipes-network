@@ -1,0 +1,25 @@
+// Header content
+.header {
+    background-color: var(--header-bg-color);
+    color: var(--header-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom-left-radius: .15rem;
+    border-bottom-right-radius: .15rem;
+    height: 6.5%;
+    gap: 1rem;
+    transition: all .2s ease-in-out;
+
+    h3 {
+        margin: 0;
+        font-size: 1.45rem;
+    }
+
+    i {
+        padding-top: .2rem;
+        font-size: 1.70rem;
+    }
+}
+
+@import './media';

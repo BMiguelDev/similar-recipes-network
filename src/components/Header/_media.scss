@@ -1,0 +1,111 @@
+// Media queries for mobile content (portrait)
+@media screen and (min-width: 250px) and (max-width: 650px) and (min-height: 950px),
+screen and (min-width: 300px) and (max-width: 650px) and (min-height: 550px),
+screen and (min-width: 500px) and (max-width: 550px) and (min-height: 500px) and (max-height: 550px) {
+
+    // Header content
+    .header {
+        justify-content: flex-start;
+        padding-left: 1rem;
+        height: 4.5%;
+        gap: .65rem;
+
+        h3 {
+            font-size: 1rem;
+        }
+
+        i {
+            font-size: 1.05rem;
+        }
+    }
+}
+
+
+// Media queries for small mobile content (portrait)
+@media screen and (min-width: 250px) and (max-width: 400px) and (min-height: 350px) and (max-height: 400px), 
+screen and (min-width: 250px) and (max-width: 500px) and (min-height: 400px) and (max-height: 550px), 
+screen and (min-width: 250px) and (max-width: 300px) and (min-height: 350px) and (max-height: 950px) {
+
+    // Header content
+    .header {
+        justify-content: flex-start;
+        padding-left: .5rem;
+        height: 5%;
+        gap: .4rem;
+
+        h3 {
+            font-size: .675rem;
+        }
+
+        i {
+            font-size: .675rem;
+        }
+    }
+}
+
+
+// Media queries for mobile content (landscape)
+@media screen and (min-height: 300px) and (max-height: 500px) and (min-width: 501px),
+screen and (min-height: 500px) and (max-height: 550px) and (min-width: 550px), 
+screen and (min-height: 550px) and (max-height: 650px) and (min-width: 650px) {
+
+    // Header content
+    .header {
+        justify-content: center;
+        height: 6%;
+        gap: .5rem;
+
+        h3 {
+            font-size: .775rem;
+        }
+
+        i {
+            padding-top: .1rem;
+            font-size: .8rem;
+        }
+    }
+}
+
+
+// Media queries for mobile content (landscape low height)
+@media screen and (min-height: 250px) and (max-height: 350px) and (min-width: 350px) and (max-width: 500px),
+screen and (min-height: 350px) and (max-height: 400px) and (min-width: 400px) and (max-width: 500px),
+screen and (min-height: 250px) and (max-height: 300px) and (min-width: 500px) {
+
+    // Header content
+    .header {
+        justify-content: center;
+        height: 6%;
+        gap: .5rem;
+
+        h3 {
+            font-size: .65rem;
+        }
+
+        i {
+            padding-top: .1rem;
+            font-size: .675rem;
+        }
+    }
+}
+
+
+// Media queries for tablet content (portrait)
+@media screen and (min-height: 650px) and (min-width: 650px) and (max-width: 800px),
+screen and (min-height: 900px) and (min-width: 650px) and (max-width: 900px) {
+
+    // Header content
+    .header {
+        justify-content: center;
+        height: 5%;
+        gap: .65rem;
+
+        h3 {
+            font-size: 1rem;
+        }
+
+        i {
+            font-size: 1rem;
+        }
+    }
+}

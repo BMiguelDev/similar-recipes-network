@@ -1,18 +1,13 @@
 import React, { Component } from 'react';
-import { Col, Row } from 'reactstrap';
-import { Sigma, RandomizeNodePositions, /* EdgeShapes, NodeShapes, RelativeSize */ } from 'react-sigma';
-import ForceLink from 'react-sigma/lib/ForceLink';
-import ForceAtlas2 from 'react-sigma/lib/ForceAtlas2';
 import axios from 'axios';
-import Radio from '@material-ui/core/Radio';
-import RadioGroup from '@material-ui/core/RadioGroup';
-import Button from '@material-ui/core/Button';
-import FormControlLabel from '@material-ui/core/FormControlLabel';
-import InfoOutlinedIcon from '@material-ui/icons/InfoOutlined';
-import Slider from '@material-ui/core/Slider';
-import Tooltip from "@material-ui/core/Tooltip";
-import Select from 'react-select';
 
+import Footer from './components/Footer/Footer';
+import Header from './components/Header/Header';
+import Sidebar from './components/Sidebar/Sidebar';
+import HelpInfo from './components/HelpInfo/HelpInfo';
+import DarkModeButton from './components/DarkModeButton/DarkModeButton';
+import HelpButton from './components/HelpButton/HelpButton';
+import Graph from './components/Graph/Graph';
 import './App.scss';
 
 // Data imports to handle API downtime
@@ -26,7 +21,6 @@ import queryDataBurgerSimilar15 from './data/queryDataBurgerSimilar15';
 
 // Get API key from .env file
 const SPOONACULAR_API_KEY = process.env.REACT_APP_SPOONACULAR_API_KEY;
-
 
 class App extends Component {
     constructor(props) {
@@ -64,9 +58,8 @@ class App extends Component {
         this.getNodeSize = this.getNodeSize.bind(this);
         this.getNodeColor = this.getNodeColor.bind(this);
         this.handleGraphNodeClick = this.handleGraphNodeClick.bind(this);
-        this.buildGraphAlgorithm1 = this.buildGraphAlgorithm1.bind(this);
-        this.displaySideBarInformation = this.displaySideBarInformation.bind(this);
-        this.displayGraph = this.displayGraph.bind(this);
+        this.buildGraphAlgorithm = this.buildGraphAlgorithm.bind(this);
+        this.changeIsNodeImageLoaded = this.changeIsNodeImageLoaded.bind(this);
     }
 
     handleResize() {
@@ -217,7 +210,11 @@ class App extends Component {
         else return titleString.toString().slice(0, 52) + '...';
     }
 
-    async buildGraphAlgorithm1(item) {
+    changeIsNodeImageLoaded(booleanValue) {
+        this.setState({ isNodeImageLoaded: booleanValue ? true : false });
+    }
+
+    async buildGraphAlgorithm(item) {
         //If graph to be built is already built, simply show the searched recipe in the side bar and return
         if (item.id === this.state.recipeIdPreviousGraphBuilt) {
             this.handleGraphNodeClick(null, item);
@@ -335,7 +332,7 @@ class App extends Component {
 
                 // Get similar nodes to each recipe
                 let queryDataEachRelatedRecipe = [];     // Initialize variable that will hold the query response 
-                
+
                 // Define function to handle API unavailability by working with dummy data
                 const getDummyDataForEachRelatedRecipe = (index) => {
                     switch (index + 1) {
@@ -353,7 +350,7 @@ class App extends Component {
                             return queryDataBurgerSimilar11;
                     }
                 }
-                
+
                 await axios.get('https://api.spoonacular.com/recipes/' + relatedRecipes[j].id + '/similar?apiKey=' + SPOONACULAR_API_KEY + '&number=' + this.state.numberOfRecipes)
                     .then((response) => {
                         if (response.status === 402 || response.status === 429) {
@@ -425,125 +422,13 @@ class App extends Component {
             }
         }
 
-        item.title=this.parseRecipeTitleString(item.title);  // Parse item title before showing info on side bar
+        item.title = this.parseRecipeTitleString(item.title);  // Parse item title before showing info on side bar
         this.handleGraphNodeClick(null, item);       // Show Recipe on side bar
         this.setState({ isLoading: false, isGraphLoading: true, graphJson: myGraph, isGraphBuilt: true, recipeIdPreviousGraphBuilt: item.id });
     }
 
-    displaySideBarInformation() {
-        if (this.state.isLoading) {
-            return (
-                <Row className="loading_row">
-                    <i className="fas fa-spinner fa-spin"></i>
-                    <p>Loading</p>
-                </Row>
-            );
-        } else {
-            if (this.state.nodeClicked !== null) {
-                let recipeName = this.state.nodeClicked.title;
-                let recipeImage = "https://spoonacular.com/recipeImages/" + this.state.nodeClicked.id + "-480x360." + this.state.nodeClicked.imageType;
-
-                return (
-                    <Row className="recipe_clicked_description">
-                        <Tooltip title={<span className='tooltip_container'>Create graph!</span>}/*"Create graph!"*/ placement="right">
-                            <button type="submit" onClick={() => this.buildGraphAlgorithm1(this.state.nodeClicked)}><h4> {recipeName} </h4></button>
-                        </Tooltip>
-
-                        <div className="recipe_information_charecteristics_container">
-                            <a href={this.state.nodeClicked.sourceUrl} target="_blank" rel="noreferrer">
-                                <img
-                                    src={recipeImage}
-                                    alt="Recipe"
-                                    style={this.state.isNodeImageLoaded ? {} : { display: 'none' }}
-                                    onLoad={() => this.setState({ isNodeImageLoaded: true })
-                                    }
-                                />
-                                {this.state.isNodeImageLoaded ? null :
-                                    <Row className="loading_row">
-                                        <i className="fas fa-spinner fa-spin"></i>
-                                        <p>Loading</p>
-                                    </Row>
-                                }
-                            </a>
-                            <div className="recipe_characteristics_container">
-                                <Tooltip title={<span className='tooltip_container'>Preparation</span>}/*"Preparation"*/ placement="left">
-                                    <span>{this.state.nodeClicked.readyInMinutes}<br />Min.</span>
-                                </Tooltip>
-                                <Tooltip title={<span className='tooltip_container'>Servings</span>}/*"Servings"*/ placement="right">
-                                    <span>{this.state.nodeClicked.servings}<br />Ser.</span>
-                                </Tooltip>
-                            </div>
-                        </div>
-                    </Row>
-                );
-            } else if (this.state.searchNameWasSubmitted) {
-                if (this.state.searchItemsResults.length > 0) {
-                    return (
-                        <Row className="recipe_title_search_results">
-                            <ul>
-                                {this.state.searchItemsResults.map(item => (
-                                    <li onClick={() => this.buildGraphAlgorithm1(item)} key={item.id}>{this.parseRecipeTitleString(item.title)}</li>
-                                ))}
-                            </ul>
-                        </Row>
-                    );
-                } else {
-                    return (
-                        <Row className="recipe_title_search_results_empty">
-                            <p> No results for that query, try something else!</p>
-                        </Row>
-                    );
-                }
-            } else return;
-        }
-    }
-
-    displayGraph() {
-        if (this.state.isGraphBuilt) {
-            if (this.state.selectedLayout === 'Force Atlas 2') {
-                return (
-                    <Sigma className="sigma_graph" style={{ width: "100%", height: "100%", fontSize: "2rem" }} onClickNode={this.handleGraphNodeClick} graph={this.state.graphJson} settings={{ drawEdges: true, clone: false, defaultLabelColor: 'rgba(43, 144, 222, 0.975)' }}>
-                        {/* <RelativeSize initialSize={1} /> */}
-                        <RandomizeNodePositions />
-                        <ForceAtlas2 easing="cubicInOut" gravity={2} /* this attracts nodes connected with edges of positive weight*/ edgeWeightInfluence={4} />
-                    </Sigma>
-                )
-            }
-            else if (this.state.selectedLayout === 'Force Link') {
-                const angle = Math.PI / 3;
-                return (
-                    <Sigma className="sigma_graph" style={{ width: "100%", height: "100%" }} onClickNode={this.handleGraphNodeClick} graph={this.state.graphJson} settings={{ drawEdges: true, clone: false, defaultLabelColor: 'rgba(43, 144, 222, 0.975)' }}>
-                        {/* <RelativeSize initialSize={1} /> */}
-                        <RandomizeNodePositions />
-                        <ForceLink nodeSiblingsAngleMin={angle} edgeWeightInfluence={2}/* this attracts nodes connected with edges of positive weight edgeWeightInfluence={2}*/ />
-                    </Sigma>
-                )
-            }
-        } else if (this.state.isGraphLoading) {
-            return (
-                <div className="graph_loading_container">
-                    <i className="fas fa-spinner fa-spin"></i>
-                </div>
-            )
-        } else {
-            return (
-                <div className="empty_graph_container">
-                    <i className="fa-regular fa-face-smile"></i>
-                    <div className="empty_graph_container_description">
-                        <h4>Search for a recipe and click it to build a network graph of similar recipes!</h4>
-                        <p>
-                            You can then drag to explore the graph and search each node.
-                            Nodes are colored based on preparation time and sized based on number of servings.
-                        </p>
-                    </div>
-                </div>
-            )
-        }
-    }
 
     // TODO: 
-    // - Check responsiveness on all breakpoints
-    // - split app component into several smaller components
     // - make header and footer components css media breakpoint values higher (to make content smaller on normal portrait screens)
 
     render() {
@@ -567,124 +452,40 @@ class App extends Component {
 
         return (
             <div className={this.state.isDarkMode ? "app_container dark_mode" : "app_container"}>
-                <header className="header">
-                    <h3>Recipe Suggestions Network</h3>
-                    <i className="fa-solid fa-mug-saucer"></i>
-                    {/* <i className="fa-solid fa-utensils"></i> */}
-                </header>
+                <Header />
                 <main className="main_container">
-                    <Col className="sidebar_content">
-                        <form className="sidebar_form" onSubmit={this.handleSubmit}>
-                            <div className="sidebar_form_radio_container">
-                                <label>
-                                    <p> Graph Layout </p>
-                                    <Button>
-                                        <InfoOutlinedIcon className="info" onClick={this.showGraphLayoutInfoButton} />
-                                    </Button>
-                                    <p className="graph_layout_info graph_layout_info_hidden">Layout algorithm to use</p>
-                                </label>
-                                <RadioGroup className="graph_layout_radio_select" aria-label="Graph Layout" name="graphlayout" value={this.state.selectedLayout} onChange={this.handleChangeLayoutSelect}>
-                                    <FormControlLabel className="form_lab" value="Force Atlas 2" control={<Radio />} label="Force Atlas 2" />
-                                    <FormControlLabel className="form_lab" value="Force Link" control={<Radio />} label="Force Link" />
-                                </RadioGroup>
-                            </div>
-                            <div className="options_filter">
-                                <div className="number_of_games_slider_container">
-                                    <label component="legend">
-                                        Number of Recipes
-                                        <Slider
-                                            defaultValue={3}
-                                            aria-labelledby="discrete-slider"
-                                            valueLabelDisplay="auto"
-                                            step={1}
-                                            marks={true}
-                                            min={3}
-                                            max={6}
-                                            onChange={this.handleChangeNumOfRecipes}
-                                        />
-                                    </label>
-                                </div>
-                                <div className="genres_select_input_container">
-                                    <label> Meals
-                                        <Select
-                                            value={this.selectedCategory}
-                                            onChange={this.handleChangeCategorySelect}
-                                            options={mealType}
-
-                                            // onBlur={event => event.preventDefault()}
-                                            // blurInputOnSelect={false}
-                                        // https://react-select.com/styles#the-styles-prop
-                                        // TODO: remove this
-                                        />
-                                    </label>
-                                </div>
-                            </div>
-                            <div className="recipe_search_input_container">
-                                <label> Recipe Search
-                                    <input
-                                        type="text"
-                                        className="recipe_search_input"
-                                        value={this.state.searchName}
-                                        placeholder="Cheese burger"
-                                        onChange={this.handleChangeSearch}
-                                    />
-                                </label>
-                            </div>
-                            <div className="recipe_search_button_container">
-                                <Button className="recipe_search_button" variant="contained" type="submit">Search</Button>
-                            </div>
-                        </form>
-                        {this.displaySideBarInformation()}
-                    </Col>
-                    <Col className="graph_container">
-                        {this.displayGraph()}
-                    </Col>
+                    <Sidebar
+                        handleSubmit={this.handleSubmit}
+                        showGraphLayoutInfoButton={this.showGraphLayoutInfoButton}
+                        selectedLayout={this.state.selectedLayout}
+                        handleChangeLayoutSelect={this.handleChangeLayoutSelect}
+                        handleChangeNumOfRecipes={this.handleChangeNumOfRecipes}
+                        selectedCategory={this.selectedCategory}
+                        handleChangeCategorySelect={this.handleChangeCategorySelect}
+                        searchName={this.state.searchName}
+                        handleChangeSearch={this.handleChangeSearch}
+                        mealType={mealType}
+                        isLoading={this.state.isLoading}
+                        nodeClicked={this.state.nodeClicked}
+                        isNodeImageLoaded={this.state.isNodeImageLoaded}
+                        searchNameWasSubmitted={this.state.searchNameWasSubmitted}
+                        searchItemsResults={this.state.searchItemsResults}
+                        buildGraphAlgorithm={this.buildGraphAlgorithm}
+                        parseRecipeTitleString={this.parseRecipeTitleString}
+                        changeIsNodeImageLoaded={this.changeIsNodeImageLoaded}
+                    />
+                    <Graph 
+                        isGraphBuilt={this.state.isGraphBuilt}
+                        selectedLayout={this.state.selectedLayout}
+                        handleGraphNodeClick={this.handleGraphNodeClick}
+                        graphJson={this.state.graphJson}
+                        isGraphLoading={this.state.isGraphLoading}
+                    />
                 </main>
-                <footer>
-                    <div className="footer_api_description">
-                        <p>Powered by <a href="https://spoonacular.com/food-api" target="_blank" rel="noreferrer">Spoonacular API</a></p>
-                    </div>
-                    <div className="footer_info">
-                        <p className="footer_text">Copyright © 2022 Bruno Miguel</p>
-                        <div className="footer_icon_container">
-                            <a href="https://github.com/BMiguelDev/similar-recipes-network" target="_blank" rel="noreferrer">
-                                <i className="fa-solid fa-code"></i>
-                            </a>
-                            <a href="https://google.com" target="_blank" rel="noreferrer">
-                                <i className="fa-solid fa-desktop"></i>
-                            </a>
-                            <a href="https://github.com/BMiguelDev" target="_blank" rel="noreferrer">
-                                <i className="fa-brands fa-github"></i>
-                            </a>
-                            <a href="https://google.com" target="_blank" rel="noreferrer">
-                                <i className="fa-brands fa-linkedin"></i>
-                            </a>
-                        </div>
-                    </div>
-                </footer>
-                <div className="dark_mode_container" onClick={this.handleChangeIsDarkMode}>
-                    {this.state.isDarkMode ? (<i className="fa-solid fa-moon"></i>) : (<i className="fa-solid fa-sun"></i>)}
-                </div>
-
-                <Tooltip title={<span className='tooltip_container'>Help</span>}/*"Help"*/ placement="bottom" >
-                    <div className="app_information_button_container" onClick={this.handleToggleInfoSection}>
-                        <i className="fa-solid fa-circle-info"></i>
-                    </div>
-                </Tooltip>
-
-                <div className="app_info_text_container app_info_text_container_hidden">
-                    <i className="fa-solid fa-circle-info"></i>
-                    <p>
-                        With this App you can generate a network graph to find recipes similar to your favourite ones!
-                    </p>
-                    <p>
-                        Search for a recipe, filter by meal type and choose the number of similar recipes desired. If you like seeing things moving, you can also change the graph layout algorithm on the fly.
-                    </p>
-                    <span><span>Note</span>: The Spoonacular API has a limited number of queries, so if your search always returns "Burger" recipes, the daily queries have expired.</span>
-                    <div className="app_info_text_container_close" onClick={this.handleToggleInfoSection}>
-                        <i className="fa-solid fa-xmark"></i>
-                    </div>
-                </div>
+                <Footer />
+                <DarkModeButton handleChangeIsDarkMode={this.handleChangeIsDarkMode} isDarkMode={this.state.isDarkMode} />
+                <HelpButton handleToggleInfoSection={this.handleToggleInfoSection}></HelpButton>
+                <HelpInfo handleToggleInfoSection={this.handleToggleInfoSection} />
             </div>
         );
     }
