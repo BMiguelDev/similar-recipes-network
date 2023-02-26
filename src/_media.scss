@@ -381,23 +381,24 @@ screen and (min-width: 500px) and (max-width: 550px) and (min-height: 500px) and
         top: 6.5%;
         width: 46%;
         height: 42.25%;
-        padding: .65;
-        gap: .25rem;
+        padding: .55;
+        gap: .2rem;
 
         i {
-            font-size: 1.05rem;
-            padding-bottom: .2rem;
+            font-size: .85rem;
+            padding-bottom: .15rem;
         }
 
         p {
-            font-size: .75rem;
+            font-size: .65rem;
             text-indent: .4rem;
-            line-height: .925rem;
+            line-height: .75rem;
         }
 
         span {
-            font-size: .675rem;
-            line-height: .8rem;
+            font-size: .575rem;
+            line-height: .675rem;
+            padding-top: .1rem;
         }
 
         .app_info_text_container_close {
@@ -407,7 +408,7 @@ screen and (min-width: 500px) and (max-width: 550px) and (min-height: 500px) and
             right: 2%;
 
             i {
-                font-size: .85rem;
+                font-size: .825rem;
             }
         }
     }
@@ -822,23 +823,26 @@ screen and (min-width: 250px) and (max-width: 300px) and (min-height: 350px) and
         left: 51.5%;
         top: 7.5%;
         width: 46.5%;
-        height: 41.25%;
-        padding: .5rem;
-        gap: .25rem;
+        height: 44.5%;
+        padding: .25rem .25rem;
+        gap: .1rem;
+        border-radius: .5rem;
 
         i {
-            font-size: 1rem;
-            padding-bottom: .2rem;
+            font-size: .65rem;
+            padding-bottom: .1rem;
         }
 
         p {
-            font-size: .65rem;
+            font-size: .5rem;
             text-indent: .4rem;
-            line-height: .8rem;
+            line-height: .525rem;
         }
 
         span {
-            font-size: .625rem;
+            font-size: .475rem;
+            line-height: .5rem;
+            padding-top: .1rem;
         }
 
         .app_info_text_container_close {
@@ -848,7 +852,7 @@ screen and (min-width: 250px) and (max-width: 300px) and (min-height: 350px) and
             right: 2%;
 
             i {
-                font-size: .825rem;
+                font-size: .7rem;
             }
         }
     }
@@ -1203,22 +1207,23 @@ screen and (min-height: 550px) and (max-height: 650px) and (min-width: 650px) {
         top: 9.5%;
         width: 27.25%;
         height: 82%;
-        padding: .25rem .5rem;
-        gap: .25rem;
+        padding: .25rem .35rem;
+        gap: 0rem;
 
         i {
-            font-size: 1.075rem;
-            padding-bottom: .5rem;
+            font-size: 1rem;
+            padding-bottom: .25rem;
         }
 
         p {
-            font-size: .7rem;
+            font-size: .66rem;
             text-indent: .4rem;
-            line-height: .95rem;
+            line-height: .8rem;
         }
 
         span {
-            font-size: .675rem;
+            font-size: .635rem;
+            line-height: .75rem;
         }
 
         .app_info_text_container_close {
