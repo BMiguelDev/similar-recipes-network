@@ -25,7 +25,7 @@ export default class Graph extends Component {
             else if (this.props.selectedLayout === 'Force Link') {
                 const angle = Math.PI / 3;
                 return (
-                    <Sigma className="sigma_graph" style={{ width: "100%", height: "100%" }} onClickNode={this.props.handleGraphNodeClick} graph={this.props.state.graphJson} settings={{ drawEdges: true, clone: false, defaultLabelColor: 'rgba(43, 144, 222, 0.975)' }}>
+                    <Sigma className="sigma_graph" style={{ width: "100%", height: "100%" }} onClickNode={this.props.handleGraphNodeClick} graph={this.props.graphJson} settings={{ drawEdges: true, clone: false, defaultLabelColor: 'rgba(43, 144, 222, 0.975)' }}>
                         {/* <RelativeSize initialSize={1} /> */}
                         <RandomizeNodePositions />
                         <ForceLink nodeSiblingsAngleMin={angle} edgeWeightInfluence={2}/* this attracts nodes connected with edges of positive weight*/ />
