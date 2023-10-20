@@ -15,7 +15,7 @@ export default class Footer extends Component {
                         <a href="https://github.com/BMiguelDev/similar-recipes-network" target="_blank" rel="noreferrer">
                             <i className="fa-solid fa-code"></i>
                         </a>
-                        <a href="https://google.com" target="_blank" rel="noreferrer">
+                        <a href="https://bmigueldev.github.io/brunomiguel" target="_blank" rel="noreferrer">
                             <i className="fa-solid fa-desktop"></i>
                         </a>
                         <a href="https://github.com/BMiguelDev" target="_blank" rel="noreferrer">
